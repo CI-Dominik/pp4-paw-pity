@@ -13,8 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
-if os.path.exists(".env"):
-    from dotenv import load_dotenv
+from dotenv import load_dotenv
 
 load_dotenv()
 
