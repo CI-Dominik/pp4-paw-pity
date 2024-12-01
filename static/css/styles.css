@@ -1,8 +1,22 @@
+/* GENERAL STYLING */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+}
+
+.footer {
+    align-self: flex-end;
+}
+
+/* COLORS */
 
 .navbar {
     background-color: turquoise;

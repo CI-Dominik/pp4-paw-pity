@@ -17,42 +17,60 @@
 
 <!-- HEAD END -->
 
-<!-- NAVIGATION START -->
-
-<nav class="navbar navbar-expand-lg">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Lost Animals</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Report</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" aria-disabled="true">Login (Disabled for production)</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- NAVIGATION END -->
-
 <!-- BODY START -->
 
-<body>
+<body class="container">
 
-    {% block content %}
-    {% endblock content %}
+    <!-- NAVIGATION START -->
+    <div class="row">
+        <nav class="navbar navbar-expand-lg d-flex justify-content-end">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Paw Pity</a>
+                <!-- Hamburger Menu Button -->
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <!-- Navigation Elements -->
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lost Animals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Report</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" aria-disabled="true">Login (Disabled for production)</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+
+    <!-- NAVIGATION END -->
+
+    <!-- CONTENT START -->
+    <div class="row">
+        <main>
+            {% block content %}
+            {% endblock content %}
+        </main>
+    </div>
+    <!-- CONTENT END -->
+
+    <!-- FOOTER START -->
+
+    <div class="row">
+        <div class="col col-12 bg-primary">FOOTER</div>
+    </div>
+
+    <!-- FOOTER END -->
 
     <!-- Bootstrap JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
