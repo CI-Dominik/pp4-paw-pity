@@ -7,6 +7,18 @@
 {% block content %}
 <h1>{% trans "Sign Up" %}</h1>
 
+{% if form.errors %}
+<h3 class="text-danger">Error while registering account!</h3>
+<p class="text-danger">Please check the following inputs:</p>
+<ul class="text-danger">
+    {% for field in form %}
+        {% for error in field.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+</ul>
+{% endif %}
+
 <p>{% blocktrans %}Already have an account? Then please <a href="{{ login_url }}">sign in</a>.{% endblocktrans %}</p>
 
 <form class="signup" id="signup_form" method="post" action="{% url 'account_signup' %}">
