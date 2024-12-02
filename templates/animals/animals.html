@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>Animals</h1>
+
+<a href="{% url 'add_animal' %}">Add an Animal</a>
+
+<h2>Your Animals</h2>
+
+{% if animal_list %}
+{% for animal in animal_list %}
+
+<p>{{ animal.name }}</p>
+<p>{{ animal.age }}</p>
+
+{% endfor %}
+{% else %}
+<p>You don't have any animals registered.</p>
+{% endif %}
+
+{% endblock content %}

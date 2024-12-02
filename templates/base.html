@@ -43,6 +43,9 @@
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
+                            <a class="nav-link text-white" href="{% url 'animals' %}">Your Animals</strong></a>
+                        </li>
+                        <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'account_logout' %}">User Settings</strong></a>
                         </li>
                         <li class="nav-item">

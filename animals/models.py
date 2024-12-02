@@ -25,8 +25,9 @@ class Animal(models.Model):
         max_length=20,
         choices=SPECIES_CHOICE,
     )
+    description = models.CharField(max_length=255, blank=True, null=True)
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
-    image = CloudinaryField('image', default='placeholder')
+    image = CloudinaryField('image')
     is_found = models.BooleanField(default=False)
 
     def __str__(self):
