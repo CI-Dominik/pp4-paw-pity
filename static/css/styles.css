@@ -52,6 +52,12 @@
     color: white;
 }
 
+/* EDIT ANIMAL */
+
+.save-button {
+    margin-top: 20px;
+}
+
 /* MEDIA QUERIES */
 
 /* Hero Image */
