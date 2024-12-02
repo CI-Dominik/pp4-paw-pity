@@ -10,14 +10,8 @@
     --primary-color: #00989b;
 }
 
-main {
-    display: flex;
-    flex-flow: column nowrap;
-    min-height: 100vh;
-}
-
 .footer {
-    align-self: flex-end;
+    margin-top: 20px;
 }
 
 /* COLORS */

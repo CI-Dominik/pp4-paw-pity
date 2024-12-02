@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<h1>Edit Animal</h1>
+
+{% if success_message %}
+<div class="container mt-3">
+
+    <div class="alert alert-success" role="alert">
+        {{ success_message }}
+    </div>
+
+</div>
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Save</button>
+</form>
+
+{% endblock content %}
