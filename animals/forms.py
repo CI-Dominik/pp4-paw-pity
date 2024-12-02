@@ -23,6 +23,7 @@ class AnimalForm(forms.ModelForm):
         ]
 
     name = forms.CharField(
+        min_length=3,
         widget=forms.TextInput(
             attrs={
                 'class': 'form-control'
@@ -50,8 +51,12 @@ class AnimalForm(forms.ModelForm):
         )
     image = forms.ImageField(
         widget=forms.ClearableFileInput(attrs={'class': 'form-control-file'})
-        
+
     )
+
+    def clean_name(self):
+        name = self.cleaned_data['name']
+        return name.capitalize()
 
     def clean_age(self):
         age = self.cleaned_data.get('age')

@@ -45,10 +45,30 @@ def edit_animal(request, animal_id):
     if request.method == 'POST':
         form = AnimalForm(request.POST, request.FILES, instance=animal)
         if form.is_valid():
-            form.save()
-            success_message = f"{animal.name} successfully updated!"
+            name = form.cleaned_data.get('name').lower()
+            owner = request.user
+
+            if Animal.objects.filter(name__iexact=name.lower(), owner=owner).exclude(id=animal.id).exists():
+                form.add_error(
+                    'name', f'You have already registered an animal with that name.'
+                )
+                return render(request, 'animals/edit_animal.html', {'form': form})
+
+            else:
+                form.save()
+                success_message = f"{animal.name} successfully updated!"
+                return render(
+                    request,
+                    'animals/edit_animal.html',
+                    {
+                        'form': form,
+                        'success_message': success_message
+                    }
+                )
+
     else:
         form = AnimalForm(instance=animal)
+
     return render(
         request,
         'animals/edit_animal.html',
