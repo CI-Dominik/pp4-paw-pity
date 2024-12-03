@@ -9,7 +9,8 @@ from django.http import HttpResponseRedirect
 
 # View to show user's animals
 @login_required
-def animals(request, message=None):
+def animals(request):
+    message = request.session.get('message')
     animal_list = Animal.objects.filter(owner=request.user)
     paginator = Paginator(animal_list, 8)
     page_number = request.GET.get('page')
@@ -97,4 +98,5 @@ def delete_animal(request, animal_id):
     else:
         message = 'You can only delete your own animals!'
 
-    return HttpResponseRedirect(reverse('animals_with_message', args=[message]))
+    request.session['message'] = message
+    return HttpResponseRedirect(reverse('animals'))

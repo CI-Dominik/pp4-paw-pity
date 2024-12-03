@@ -59,7 +59,7 @@ INSTALLED_APPS = [
     'cloudinary',
     'main',
     'animals',
-    'login',
+    'accountsystem',
     'reports',
     'crispy_forms',
     'crispy_bootstrap5',

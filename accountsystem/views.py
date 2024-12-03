@@ -15,4 +15,4 @@ def login_view(request):
                 return redirect('home')
     else:
         form = CustomLoginForm()
-    return render(request, 'login/login.html', {'form': form})
+    return render(request, 'accountsystem/login.html', {'form': form})
