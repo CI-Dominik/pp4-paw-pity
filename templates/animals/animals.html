@@ -9,29 +9,43 @@
 
 <h2>Your Animals</h2>
 
-<div class="row justify-content-center gap-3">
-
-{% if animal_list %}
-{% for animal in animal_list %}
-
-<div class="card" style="width: 18rem;">
-    <img src="{{ animal.image.url }}" class="card-img-top" alt="Photo of {{ animal.name }}">
-    <div class="card-body">
-      <h5 class="card-title">{{ animal.name }}</h5>
-      <p class="card-text">
-        Age: {{ animal.age }}<br>
-        Species: {{ animal.species }}
-      </p>
-      <a href="{% url 'edit_animal' animal.id %}" class="btn btn-warning">Edit</a>
-      <a href="{% url 'delete_animal' animal.id %}" class="btn btn-danger">Delete</a>
+<div class="row justify-content-center my-3">
+  {% if page_obj %}
+  {% for animal in page_obj %}
+    <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
+      <div class="card" style="width: 16rem;">
+        <img src="{{ animal.image.url }}" class="card-img-top" alt="Photo of {{ animal.name }}">
+        <div class="card-body">
+          <h5 class="card-title">{{ animal.name }}</h5>
+          <p class="card-text">
+            Age: {{ animal.age }}<br>
+            Species: {{ animal.species }}
+          </p>
+          <a href="{% url 'edit_animal' animal.id %}" class="btn btn-warning">Edit</a>
+          <a href="{% url 'delete_animal' animal.id %}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
     </div>
-  </div>
+  {% endfor %}
+  {% else %}
+  <p>You don't have any animals registered.</p>
+  {% endif %}
+</div>
 
-{% endfor %}
-{% else %}
-<p>You don't have any animals registered.</p>
-{% endif %}
-
+<div class="pagination justify-content-center my-3 gap-1 text-center">
+  {% if page_obj.has_previous %}
+  <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">Previous</a>
+  {% endif %}
+  {% for page in page_obj.paginator.page_range %}
+  {% if page == page_obj.number %}
+  <span class="btn btn-primary">{{ page }}</span>
+  {% else %}
+  <a href="?page={{ page }}" class="btn btn-secondary">{{ page }}</a>
+  {% endif %}
+  {% endfor %}
+  {% if page_obj.has_next %}
+  <a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary">Next</a>
+  {% endif %}
 </div>
 
 {% endblock content %}

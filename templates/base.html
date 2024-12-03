@@ -49,7 +49,9 @@
                             <a class="nav-link text-white" href="#" aria-disabled="true">User Settings</strong></a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'account_logout' %}">Log out (Logged in as <strong>{{ user }})</strong></a>
+                            <a class="nav-link text-white" href="#" data-bs-toggle="modal"
+                                data-bs-target="#logout-modal">Log out (Logged in as
+                                <strong>{{ user }})</strong></a>
                         </li>
                         {% else %}
                         <li class="nav-item">
@@ -83,6 +85,29 @@
     </div>
 
     <!-- FOOTER END -->
+
+    <!-- LOGOUT MODAL START -->
+
+    <div class="modal fade" id="logout-modal" tabindex="-1" role="dialog" aria-labelledby="logout-modal-label"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="logout-modal-label">Logout</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Are you sure you want to log out?</p>
+                    <form method="post" action="{% url 'account_logout' %}">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGOUT MODAL END -->
 
     <!-- Bootstrap JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>

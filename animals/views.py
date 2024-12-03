@@ -2,15 +2,19 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AnimalForm
 from django.contrib.auth.decorators import login_required
 from .models import Animal
+from django.core.paginator import Paginator
 
 
 @login_required
 def animals(request):
     animal_list = Animal.objects.filter(owner=request.user)
+    paginator = Paginator(animal_list, 8)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
     return render(
         request,
         "animals/animals.html",
-        {'animal_list': animal_list}
+        {'animal_list': animal_list, 'page_obj': page_obj}
     )
 
 
