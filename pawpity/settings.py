@@ -58,6 +58,9 @@ INSTALLED_APPS = [
     'cloudinary',
     'main',
     'animals',
+    'login',
+    'crispy_forms',
+    'crispy_bootstrap5',
 ]
 
 SITE_ID = 1
@@ -162,3 +165,7 @@ AUTH_USER_MODEL = 'main.CustomUser'
 # Cloudinary
 CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
