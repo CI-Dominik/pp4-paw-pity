@@ -79,9 +79,57 @@
     <!-- CONTENT END -->
 
     <!-- FOOTER START -->
-
-    <div class="row footer">
-        <div class="col col-12 bg-primary">FOOTER</div>
+    <div class="row">
+        <footer class="footer py-3 footer-fluid">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <h5>Information</h5>
+                        <p>Paw Pity is a non-profit organization dedicated to helping animals who ran away. Together, we
+                            can
+                            make a difference.</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Links</h5>
+                        <ul class="list-unstyled">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="{% url 'home' %}">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'reports' %}">Lost Animals</a>
+                            </li>
+                            {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'animals' %}">Your Animals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" aria-disabled="true">User Settings</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#logout-modal">Log
+                                    out
+                                    (Logged in as
+                                    <strong>{{ user }})</strong></a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'account_signup' %}">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{% url 'login' %}">Login</a>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contact</h5>
+                        <p>123 Buffalo St, Animal Town, USA 12345</p>
+                        <p>Phone: 555-555-5555</p>
+                        <p>Email: hello@pawpity.paw</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- FOOTER END -->

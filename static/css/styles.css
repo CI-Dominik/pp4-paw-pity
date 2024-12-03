@@ -12,6 +12,8 @@
 
 .footer {
     margin-top: 20px;
+    background-color: var(--primary-color);
+    color: white;
 }
 
 /* COLORS */
@@ -85,7 +87,7 @@
         height: 150px;
     }
     .hero-card h2, .hero-card {
-        font-size: 0.5rem;
+        font-size: 0.8rem;
     }
     .hero-button {
         width: 150px;
