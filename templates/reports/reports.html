@@ -5,8 +5,9 @@
 
 <h1>Reports</h1>
 
-
+<!-- Generate animal cards if there are any -->
 <div class="row my-3">
+    {% if page_obj %}
     {% for animal in page_obj %}
     <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
         <div class="card" style="width: 16rem;">
@@ -21,9 +22,12 @@
         </div>
     </div>
     {% endfor %}
+    {% else %}
+    <p>There are currently no reports of missing animals. That's great! :)</p>
+    {% endif %}
 </div>
 
-
+<!-- Pagination -->
 <div class="pagination justify-content-center my-3 gap-1 text-center">
     {% if page_obj.has_previous %}
     <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">Previous</a>

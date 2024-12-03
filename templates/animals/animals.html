@@ -9,23 +9,29 @@
 
 <h2>Your Animals</h2>
 
+{% if message %}
+<div class="alert alert-success" role="alert">
+  {{ message }}
+</div>
+{% endif %}
+
 <div class="row justify-content-center my-3">
   {% if page_obj %}
   {% for animal in page_obj %}
-    <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
-      <div class="card" style="width: 16rem;">
-        <img src="{{ animal.image.url }}" class="card-img-top" alt="Photo of {{ animal.name }}">
-        <div class="card-body">
-          <h5 class="card-title">{{ animal.name }}</h5>
-          <p class="card-text">
-            Age: {{ animal.age }}<br>
-            Species: {{ animal.species }}
-          </p>
-          <a href="{% url 'edit_animal' animal.id %}" class="btn btn-warning">Edit</a>
-          <a href="{% url 'delete_animal' animal.id %}" class="btn btn-danger">Delete</a>
-        </div>
+  <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
+    <div class="card" style="width: 16rem;">
+      <img src="{{ animal.image.url }}" class="card-img-top" alt="Photo of {{ animal.name }}">
+      <div class="card-body">
+        <h5 class="card-title">{{ animal.name }}</h5>
+        <p class="card-text">
+          Age: {{ animal.age }}<br>
+          Species: {{ animal.species }}
+        </p>
+        <a href="{% url 'edit_animal' animal.id %}" class="btn btn-warning">Edit</a>
+        <button class="btn btn-danger btn-delete" animal_id="{{ animal.id }}">Delete</button>
       </div>
     </div>
+  </div>
   {% endfor %}
   {% else %}
   <p>You don't have any animals registered.</p>
@@ -46,6 +52,27 @@
   {% if page_obj.has_next %}
   <a href="?page={{ page_obj.next_page_number }}" class="btn btn-secondary">Next</a>
   {% endif %}
+</div>
+
+<!-- Delete confirmation modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="deleteModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteModalLabel">Delete animal?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Are you sure you want to delete this animal?
+        This action cannot be undone.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <a id="deleteConfirm" href="#" class="btn
+          btn-danger">Delete</a>
+      </div>
+    </div>
+  </div>
 </div>
 
 {% endblock content %}
