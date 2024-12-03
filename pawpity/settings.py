@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+import cloudinary
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -165,6 +166,10 @@ AUTH_USER_MODEL = 'main.CustomUser'
 # Cloudinary
 CLOUDINARY_URL = os.getenv("CLOUDINARY_URL")
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+
+cloudinary.config(
+    secure=True  # Force HTTPS
+)
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
