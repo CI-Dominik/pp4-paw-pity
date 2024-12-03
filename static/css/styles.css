@@ -58,6 +58,14 @@
     margin-top: 20px;
 }
 
+/* REPORTS */
+
+.reports-row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
 /* MEDIA QUERIES */
 
 /* Hero Image */

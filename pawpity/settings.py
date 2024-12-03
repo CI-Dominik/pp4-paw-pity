@@ -60,6 +60,7 @@ INSTALLED_APPS = [
     'main',
     'animals',
     'login',
+    'reports',
     'crispy_forms',
     'crispy_bootstrap5',
 ]

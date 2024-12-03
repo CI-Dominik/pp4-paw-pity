@@ -39,7 +39,7 @@
                             <a class="nav-link text-white" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="#">Lost Animals</a>
+                            <a class="nav-link text-white" href="{% url 'reports' %}">Lost Animals</a>
                         </li>
                         {% if user.is_authenticated %}
                         <li class="nav-item">
