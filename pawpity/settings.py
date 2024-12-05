@@ -175,3 +175,5 @@ cloudinary.config(
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CSRF_FAILURE_VIEW = 'main.views.csrf_failure'
