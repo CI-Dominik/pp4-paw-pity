@@ -1,5 +1,128 @@
+/* GENERAL STYLING */
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+:root {
+    --primary-color: #00989b;
+}
+
+.footer {
+    margin-top: 20px;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* COLORS */
+
+/* Navigation */
+
+.navbar {
+    background-color: #00989b;
+}
+
+/* Errorlist */
+
+.errorlist {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.alert ul {
+    list-style: none;
+    padding: 0;
+}
+
+/* Hero Section */
+
+.hero-button {
+    background-color: var(--primary-color);
+}
+
+.hero-button:hover {
+    background-color: white;
+    color: var(--primary-color);
+}
+
+/* NAVIGATION */
+
+.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* HERO SECTION */
+
+.hero-image {
+    background: url("../images/hero-image.jpg") center center/cover;
+    height: 500px;
+}
+
+.hero-card {
+    display: block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+}
+
+/* EDIT ANIMAL */
+
+.save-button {
+    margin-top: 20px;
+}
+
+/* ANIMALS */
+
+.square-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+
+/* REPORTS */
+
+.reports-row {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.animal_image {
+    max-width: 400px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
+/* MEDIA QUERIES */
+
+/* Hero Image */
+
+@media(width < 768px) {
+    .hero-image {
+        height: 300px;
+    }
+
+    .hero-card {
+        margin-left: 0px;
+    }
+}
+
+@media(width < 400px) {
+    .hero-image {
+        height: 150px;
+    }
+    .hero-card h2, .hero-card {
+        font-size: 0.8rem;
+    }
+    .hero-button {
+        width: 150px;
+        font-size: 0.5rem;
+    }
 }
