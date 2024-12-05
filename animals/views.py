@@ -50,6 +50,9 @@ def add_animal(request):
 @login_required
 def edit_animal(request, animal_id):
     animal = get_object_or_404(Animal, id=animal_id)
+    if animal.owner != request.user:
+        messages.error(request, "You do not have permission to edit this animal.")
+        return redirect('animals')
     success_message = None
     if request.method == 'POST':
         form = AnimalForm(request.POST, request.FILES, instance=animal)
@@ -66,23 +69,11 @@ def edit_animal(request, animal_id):
             else:
                 form.save()
                 success_message = f"{animal.name} successfully updated!"
-                return render(
-                    request,
-                    'animals/edit_animal.html',
-                    {
-                        'form': form,
-                        'success_message': success_message
-                    }
-                )
-
+                messages.success(request, success_message)
+                return redirect('animals')
     else:
         form = AnimalForm(instance=animal)
-
-    return render(
-        request,
-        'animals/edit_animal.html',
-        {'form': form, 'success_message': success_message}
-    )
+    return render(request, 'animals/edit_animal.html', {'form': form})
 
 
 # View to delete an animal from profile
