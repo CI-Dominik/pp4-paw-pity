@@ -77,6 +77,15 @@
     margin-top: 20px;
 }
 
+/* ANIMALS */
+
+.square-image {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 1/1;
+  }
+
 /* REPORTS */
 
 .reports-row {
