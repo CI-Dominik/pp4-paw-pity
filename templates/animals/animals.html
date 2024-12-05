@@ -22,7 +22,7 @@
     <div class="card" style="width: 16rem;">
       <img src="{{ animal.image.url }}" class="card-img-top" alt="Photo of {{ animal.name }}">
       <div class="card-body">
-        <h5 class="card-title">{{ animal.name }}</h5>
+        <h5 class="card-title"><a href="{% url 'animal_detail' animal.id %}">{{ animal.name }}</a></h5>
         <p class="card-text">
           Age: {{ animal.age }}<br>
           Species: {{ animal.species }}

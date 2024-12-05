@@ -85,6 +85,12 @@
     text-align: center;
 }
 
+.animal_image {
+    max-width: 400px;
+    max-height: 300px;
+    object-fit: contain;
+}
+
 /* MEDIA QUERIES */
 
 /* Hero Image */

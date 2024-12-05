@@ -1,5 +1,6 @@
 from django import forms
 from .models import Animal
+from PIL import Image
 
 
 SPECIES_CHOICE = [
@@ -63,3 +64,11 @@ class AnimalForm(forms.ModelForm):
         if age < 0 or age > 100:
             raise forms.ValidationError("Age must be between 0 and 100.")
         return age
+
+    def clean_image(self):
+        image = self.cleaned_data['image']
+        img = Image.open(image)
+        width, height = img.size
+        if width > 1548 or height > 1548:
+            raise forms.ValidationError('The image is too big. Please choose a picture with less than 1548 pixels in height or width.')
+        return image
