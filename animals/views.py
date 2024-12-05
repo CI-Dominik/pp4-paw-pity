@@ -2,9 +2,8 @@ from django.shortcuts import render, redirect, get_object_or_404
 from .forms import AnimalForm
 from django.contrib.auth.decorators import login_required
 from .models import Animal
-from django.urls import reverse
 from django.core.paginator import Paginator
-from django.http import HttpResponseRedirect
+from django.contrib import messages
 
 
 # View to show user's animals
@@ -98,5 +97,5 @@ def delete_animal(request, animal_id):
     else:
         message = 'You can only delete your own animals!'
 
-    request.session['message'] = message
-    return HttpResponseRedirect(reverse('animals'))
+    messages.warning(request, message)
+    return redirect('animals')

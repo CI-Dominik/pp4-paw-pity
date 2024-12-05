@@ -9,10 +9,14 @@
 
 <h2>Your Animals</h2>
 
-{% if message %}
-<div class="alert alert-success" role="alert">
-  {{ message }}
-</div>
+{% if messages %}
+    {% for message in messages %}
+        {% if message.tags == 'warning' %}
+            <div class="alert alert-warning" role="alert">
+                {{ message }}
+            </div>
+        {% endif %}
+    {% endfor %}
 {% endif %}
 
 <div class="row justify-content-center my-3">
