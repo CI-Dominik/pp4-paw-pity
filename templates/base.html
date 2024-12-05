@@ -21,11 +21,29 @@
 
 <body class="container-lg">
 
+    {% if login_message %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ login_message }}
+    </div>
+    {% endif %}
+
+    {% if logout_message %}
+    <div class="alert alert-info alert-dismissible fade show" role="alert">
+        {{ logout_message }}
+    </div>
+    {% endif %}
+
+    {% if register_message %}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        {{ register_message }}
+    </div>
+    {% endif %}
+
     <!-- NAVIGATION START -->
     <div class="row">
         <nav class="navbar navbar-expand-lg d-flex justify-content-end">
             <div class="container-fluid">
-                <a class="navbar-brand text-white" href="#">Paw Pity</a>
+                <a class="navbar-brand text-white" href="{% url 'home' %}">Paw Pity</a>
                 <!-- Hamburger Menu Button -->
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
@@ -55,7 +73,7 @@
                         </li>
                         {% else %}
                         <li class="nav-item">
-                            <a class="nav-link text-white" href="{% url 'account_signup' %}">Register</a>
+                            <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
@@ -146,7 +164,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Are you sure you want to log out?</p>
-                    <form method="post" action="{% url 'account_logout' %}">
+                    <form method="post" action="{% url 'logout' %}">
                         {% csrf_token %}
                         <button type="submit" class="btn btn-primary">Logout</button>
                     </form>

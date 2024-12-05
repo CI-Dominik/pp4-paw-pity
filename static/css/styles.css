@@ -24,6 +24,23 @@
     background-color: #00989b;
 }
 
+/* Errorlist */
+
+.errorlist {
+    color: #721c24;
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    list-style: none;
+}
+
+.alert ul {
+    list-style: none;
+    padding: 0;
+}
+
 /* Hero Section */
 
 .hero-button {
