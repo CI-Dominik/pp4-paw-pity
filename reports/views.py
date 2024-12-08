@@ -4,6 +4,8 @@ from django.core.paginator import Paginator
 from .forms import CommentForm
 from .models import Comment
 from django.contrib import messages
+from django.http import HttpResponseForbidden
+from django.contrib.auth.decorators import login_required
 
 
 def reports_view(request):
@@ -36,3 +38,29 @@ def animal_detail(request, animal_id):
     else:
         form = CommentForm()
     return render(request, 'reports/animal_detail.html', {'animal': animal, 'comments': comments, 'form': form})
+
+
+@login_required
+def edit_comment(request, animal_id, comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    if request.user == comment.user:
+        if request.method == 'POST':
+            form = CommentForm(request.POST, instance=comment)
+            if form.is_valid():
+                form.save()
+                return redirect('animal_detail', animal_id=animal_id)
+        else:
+            form = CommentForm(instance=comment)
+        return render(request, 'reports/edit_comment.html', {'form': form, 'comment': comment})
+    else:
+        return HttpResponseForbidden()
+
+
+@login_required
+def delete_comment(request, animal_id, comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    if request.user == comment.user:
+        comment.delete()
+        return redirect('animal_detail', animal_id=animal_id)
+    else:
+        return HttpResponseForbidden()

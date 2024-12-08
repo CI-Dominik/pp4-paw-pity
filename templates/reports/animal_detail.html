@@ -1,6 +1,7 @@
 <!-- templates/reports/animal_detail.html -->
 {% extends 'base.html' %}
 {% load cloudinary %}
+{% load static %}
 
 {% block content %}
 <div class="container" style="max-width: 800px; margin: 0 auto;">
@@ -9,7 +10,8 @@
             <h1 class="mt-4 text-center">Animal Details</h1>
             <div class="row">
                 <div class="col-md-6 col-sm-12">
-                    <img src="{{ animal.image.url }}" alt="{{ animal.name }}" class="img-fluid animal-image" style="max-width: 100%; height: auto;">
+                    <img src="{{ animal.image.url }}" alt="{{ animal.name }}" class="img-fluid animal-image"
+                        style="max-width: 100%; height: auto;">
                 </div>
                 <div class="col-md-6 col-sm-12 report-text">
                     <h2 class="card-title text-center">{{ animal.name }}</h2>
@@ -21,44 +23,72 @@
             </div>
 
             <div class="container mt-4">
-              <div class="row">
-                  <div class="col-md-8 mx-auto">
-                      <h1 class="text-center">Hints & Comments</h1>
-                      <ul class="list-group">
-                          {% if comments %}
-                              {% for comment in comments %}
-                              <li class="list-group-item">
-                                  <div class="d-flex w-100 justify-content-between">
-                                      <h5 class="mb-1">{{ comment.user.username }}</h5>
-                                      <small>({{ comment.created_at }})</small>
-                                  </div>
-                                  <p class="mb-1">{{ comment.content }}</p>
-                              </li>
-                              {% endfor %}
-                          {% else %}
-                              <li class="list-group-item">
-                                  <p class="text-muted">No comments yet. Can you help out?</p>
-                              </li>
-                          {% endif %}
-                      </ul>
-                  </div>
-              </div>
-          </div>
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <h1 class="text-center">Hints & Comments</h1>
+                        <ul class="list-group">
+                            {% if comments %}
+                            {% for comment in comments %}
+                            <li class="list-group-item">
+                                <div class="d-flex w-100 justify-content-between">
+                                    <h5 class="mb-1">{{ comment.user.username }}</h5>
+                                    <small>({{ comment.created_at }})</small>
+                                    {% if request.user == comment.user %}
+                                    <a href="{% url 'edit_comment' animal.id comment.id %}">Bearbeiten</a>
+                                    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#delete-modal"
+                                        data-animal-id="{{ animal.id }}" data-comment-id="{{ comment.id }}">Löschen</a>
+                                    {% endif %}
+                                </div>
+                                <p class="mb-1">{{ comment.content }}</p>
+                            </li>
+                            {% endfor %}
+                            {% else %}
+                            <li class="list-group-item">
+                                <p class="text-muted">No comments yet. Can you help out?</p>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
 
             <h1 class="mt-4 text-center">Do you have clue?</h1>
-{% if user.is_authenticated %}
-    <form method="post" class="needs-validation">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-primary">Add Comment</button>
-        <input type="hidden" name="animal_id" value="{{ animal.id }}">
-    </form>
-{% else %}
-    <p>Please log in to leave a comment.</p>
-{% endif %}
+            {% if user.is_authenticated %}
+            <form method="post" class="needs-validation">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary">Add Comment</button>
+                <input type="hidden" name="animal_id" value="{{ animal.id }}">
+            </form>
+            {% else %}
+            <p>Please log in to leave a comment.</p>
+            {% endif %}
+
+            <div class="modal fade" id="delete-modal" tabindex="-1" role="dialog" aria-labelledby="delete-modal-label"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="delete-modal-label">Löschen bestätigen</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Sind Sie sicher, dass Sie den Kommentar löschen möchten?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Abbrechen</button>
+                            <a id="delete-link" class="btn btn-danger" href="#">Löschen</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
 
-{% endblock %}
+<script src="{% static 'js/commentDeleteModal.js' %}"></script>
+
+{% endblock content %}
