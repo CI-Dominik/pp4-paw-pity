@@ -94,10 +94,13 @@
     text-align: center;
 }
 
-.animal_image {
-    max-width: 400px;
-    max-height: 300px;
-    object-fit: contain;
+.animal-image {
+    max-width: 100%;
+    height: auto;
+}
+
+.report-text {
+    text-align: right;
 }
 
 /* MEDIA QUERIES */
@@ -111,6 +114,16 @@
 
     .hero-card {
         margin-left: 0px;
+    }
+
+    /* Animal Detail */
+    .animal-image {
+        width: 100%;
+        height: auto;
+    }
+
+    .report-text {
+        text-align: left;
     }
 }
 
