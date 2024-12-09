@@ -9,20 +9,24 @@
 
 <h2>Your Animals</h2>
 
+<!-- Check for messages -->
 {% if messages %}
-    {% for message in messages %}
-        {% if message.tags == 'error' %}
-            <div class="alert alert-danger" role="alert">
-                {{ message }}
-            </div>
-        {% elif message.tags == 'warning' %}
-            <div class="alert alert-warning" role="alert">
-                {{ message }}
-            </div>
-        {% endif %}
-    {% endfor %}
+<!-- Loop through messages -->
+{% for message in messages %}
+<!-- Check if message is error or warning -->
+{% if message.tags == 'error' %}
+<div class="alert alert-danger" role="alert">
+  {{ message }}
+</div>
+{% elif message.tags == 'warning' %}
+<div class="alert alert-warning" role="alert">
+  {{ message }}
+</div>
+{% endif %}
+{% endfor %}
 {% endif %}
 
+<!-- Display animals in account -->
 <div class="row justify-content-center my-3">
   {% if page_obj %}
   {% for animal in page_obj %}
@@ -30,7 +34,11 @@
     <div class="card" style="width: 16rem;">
       <img src="{{ animal.image.url }}" class="card-img-top square-image" alt="Photo of {{ animal.name }}">
       <div class="card-body">
-        <h5 class="card-title"><a href="{% url 'animal_detail' animal.id %}">{{ animal.name }}</a></h5>
+        <h5 class="card-title">
+          <a href="{% url 'animal_detail' animal.id %}" class="link-primary">
+            {{ animal.name }}
+          </a>
+        </h5>
         <p class="card-text">
           Age: {{ animal.age }}<br>
           Species: {{ animal.species }}
@@ -41,11 +49,13 @@
     </div>
   </div>
   {% endfor %}
+  <!-- Show if no animals are registered -->
   {% else %}
   <p>You don't have any animals registered.</p>
   {% endif %}
 </div>
 
+<!-- Pagination -->
 <div class="pagination justify-content-center my-3 gap-1 text-center">
   {% if page_obj.has_previous %}
   <a href="?page={{ page_obj.previous_page_number }}" class="btn btn-secondary">Previous</a>

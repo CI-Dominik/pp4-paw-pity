@@ -4,17 +4,16 @@
 {% block content %}
 
 <div class="row">
-
+  <!-- Hero -->
   <div class="col col-12 hero-image d-flex align-items-center">
     <div class="card hero-card">
       <div class="card-body">
         <h2>Lost your beloved friend?</h2>
         <p>Report a missing animal or help others bring their beloved companion back!</p>
-        <button type="button" class="btn btn-primary hero-button fw-bold">REPORT</button>
+        <a href="{% url 'reports' %}" class="btn btn-primary hero-button fw-bold">REPORTS</a>
       </div>
     </div>
   </div>
-
 </div>
 
 {% endblock content %}

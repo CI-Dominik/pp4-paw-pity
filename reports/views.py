@@ -8,6 +8,7 @@ from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 
 
+# View to show all reports
 def reports_view(request):
     animals = Animal.objects.filter(is_found=False)
     paginator = Paginator(animals, 8)
@@ -16,9 +17,12 @@ def reports_view(request):
     return render(request, 'reports/reports.html', {'page_obj': page_obj})
 
 
+# View to show a specific report
 def animal_detail(request, animal_id):
     animal = Animal.objects.get(id=animal_id)
     comments = Comment.objects.filter(animal=animal, is_approved=True)
+
+    # Handle form submission
     if request.method == 'POST':
         if request.user.is_authenticated:
             form = CommentForm(request.POST)
@@ -27,22 +31,27 @@ def animal_detail(request, animal_id):
                 comment.user = request.user
                 comment.animal = animal
                 comment.save()
+                messages.success(request, 'Your comment was successfully added.')
                 return redirect('animal_detail', animal_id=animal_id)
             else:
-                if form.cleaned_data['content'] == '':
-                    messages.error(request, 'Please enter a comment.')
-                else:
-                    messages.error(request, 'Please correct the errors in your submitted form.')
+                messages.error(request, 'Please correct the errors in your submitted form.')
         else:
             messages.error(request, 'You must be logged in to comment.')
     else:
         form = CommentForm()
-    return render(request, 'reports/animal_detail.html', {'animal': animal, 'comments': comments, 'form': form})
+
+    return render(request, 'reports/animal_detail.html', {
+        'animal': animal, 
+        'comments': comments, 
+        'form': form
+    })
 
 
+# View to edit a comment
 @login_required
 def edit_comment(request, animal_id, comment_id):
     comment = Comment.objects.get(id=comment_id)
+    # Check if the user is the author of the comment
     if request.user == comment.user:
         if request.method == 'POST':
             form = CommentForm(request.POST, instance=comment)
@@ -56,9 +65,11 @@ def edit_comment(request, animal_id, comment_id):
         return HttpResponseForbidden()
 
 
+# View to delete a comment
 @login_required
 def delete_comment(request, animal_id, comment_id):
     comment = Comment.objects.get(id=comment_id)
+    # Check if the user is the author of the comment
     if request.user == comment.user:
         comment.delete()
         return redirect('animal_detail', animal_id=animal_id)
