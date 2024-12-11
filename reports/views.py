@@ -4,13 +4,12 @@ from django.core.paginator import Paginator
 from .forms import CommentForm
 from .models import Comment
 from django.contrib import messages
-from django.http import HttpResponseForbidden
 from django.contrib.auth.decorators import login_required
 
 
 # View to show all reports
 def reports_view(request):
-    animals = Animal.objects.all()
+    animals = Animal.objects.all().order_by('-id')
     paginator = Paginator(animals, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -41,8 +40,8 @@ def animal_detail(request, animal_id):
         form = CommentForm()
 
     return render(request, 'reports/animal_detail.html', {
-        'animal': animal, 
-        'comments': comments, 
+        'animal': animal,
+        'comments': comments,
         'form': form
     })
 
