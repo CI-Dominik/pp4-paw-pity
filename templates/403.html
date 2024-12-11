@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="row justify-content-center my-5">
+      <div class="col-md-8 col-lg-6 col-xl-4">
+        <div class="error-box">
+          <h1 class="text-center">403: Forbidden</h1>
+          <p class="text-center">Sorry, but you don't have permission to access this page.</p>
+          {% if message %}
+          <p class="text-center">{{ message }}</p>
+          {% endif %}
+          <div class="text-center">
+            <a href="{% url 'home' %}" class="btn btn-primary">Go back to homepage</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

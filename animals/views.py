@@ -51,8 +51,7 @@ def add_animal(request):
 def edit_animal(request, animal_id):
     animal = get_object_or_404(Animal, id=animal_id)
     if animal.owner != request.user:
-        messages.error(request, "You do not have permission to edit this animal.")
-        return redirect('animals')
+        return render(request, '403.html', status=403)
     success_message = None
     if request.method == 'POST':
         form = AnimalForm(request.POST, request.FILES, instance=animal)
@@ -86,7 +85,7 @@ def delete_animal(request, animal_id):
         animal.delete()
         message = 'Animal deleted!'
     else:
-        message = 'You can only delete your own animals!'
+        return render(request, '403.html', status=403)
 
     messages.warning(request, message)
     return redirect('animals')

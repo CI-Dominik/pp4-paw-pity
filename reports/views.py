@@ -20,7 +20,7 @@ def reports_view(request):
 # View to show a specific report
 def animal_detail(request, animal_id):
     animal = Animal.objects.get(id=animal_id)
-    comments = Comment.objects.filter(animal=animal, is_approved=True)
+    comments = Comment.objects.filter(animal=animal)
 
     # Handle form submission
     if request.method == 'POST':
@@ -62,7 +62,7 @@ def edit_comment(request, animal_id, comment_id):
             form = CommentForm(instance=comment)
         return render(request, 'reports/edit_comment.html', {'form': form, 'comment': comment})
     else:
-        return HttpResponseForbidden()
+        return render(request, '403.html', status=403)
 
 
 # View to delete a comment
@@ -74,4 +74,4 @@ def delete_comment(request, animal_id, comment_id):
         comment.delete()
         return redirect('animal_detail', animal_id=animal_id)
     else:
-        return HttpResponseForbidden()
+        return render(request, '403.html', status=403)
