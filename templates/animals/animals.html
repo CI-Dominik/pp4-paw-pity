@@ -3,9 +3,15 @@
 
 {% block content %}
 
-<h1>Animals</h1>
 
-<a href="{% url 'add_animal' %}" class="btn btn-primary">Add an Animal</a>
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Animals</h1>
+      <p class="lead">Overview of currently registered animals. Use the button below to add a new animal.</p>
+      <a href="{% url 'add_animal' %}" class="btn btn-primary mb-3">Add an Animal</a>
+    </div>
+  </div>
+
 
 <h2>Your Animals</h2>
 
