@@ -25,20 +25,20 @@
   {% if latest_animals %}
     {% for animal in latest_animals %}
       <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
-        <div class="card" style="width: 16rem;">
-          <img src="{{ animal.image.url }}" class="card-img-top square-image" alt="Photo of {{ animal.name }}">
-          <div class="card-body">
-            <h5 class="card-title">
-              <a href="{% url 'animal_detail' animal.id %}" class="link-primary">
+        <a href="{% url 'animal_detail' animal.id %}" class="link-muted">
+          <div class="card" style="width: 16rem;">
+            <img src="{{ animal.image.url }}" class="card-img-top square-image" alt="Photo of {{ animal.name }}">
+            <div class="card-body">
+              <h5 class="card-title">
                 {{ animal.name }}
-              </a>
-            </h5>
-            <p class="card-text">
-              Location: {{ animal.location }}<br>
-              Approachable: {{ animal.is_approachable }}
-            </p>
+              </h5>
+              <p class="card-text">
+                Location: {{ animal.location }}<br>
+                Approachable: {{ animal.is_approachable }}
+              </p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     {% endfor %}
   {% else %}

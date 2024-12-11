@@ -10,26 +10,24 @@
     {% if page_obj %}
     {% for animal in page_obj %}
     <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
+      <a href="{% url 'animal_detail' animal.id %}" class="link-muted">
         <div class="card" style="width: 16rem;">
-            <img src="{{ animal.image.url }}" class="card-img-top square-image" alt="Photo of {{ animal.name }}">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <a href="{% url 'animal_detail' animal.id %}" class="link-primary">
-                      {{ animal.name }}
-                    </a>
-                  </h5>
-                <p class="card-text">
-                    Age: {{ animal.age }}<br>
-                    Species: {{ animal.species }}
-                </p>
-            </div>
+          <img src="{{ animal.image.url }}" class="card-img-top square-image" alt="Photo of {{ animal.name }}">
+          <div class="card-body">
+            <h5 class="card-title">{{ animal.name }}</h5>
+            <p class="card-text">
+              Location: {{ animal.location }}<br>
+              Approachable: {% if animal.is_approachable %}Yes{% else %}No{% endif %}
+            </p>
+          </div>
         </div>
+      </a>
     </div>
     {% endfor %}
     {% else %}
     <p>There are currently no reports of missing animals. That's great! :)</p>
     {% endif %}
-</div>
+  </div>
 
 <!-- Pagination -->
 <div class="pagination justify-content-center my-3 gap-1 text-center">

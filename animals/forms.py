@@ -1,6 +1,5 @@
 from django import forms
 from .models import Animal
-from PIL import Image
 
 
 SPECIES_CHOICE = [
