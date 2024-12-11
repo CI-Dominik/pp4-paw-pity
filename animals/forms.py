@@ -4,11 +4,11 @@ from PIL import Image
 
 
 SPECIES_CHOICE = [
-    ('Dog', 'Dog'),
-    ('Cat', 'Cat'),
-    ('Rodent', 'Rodent'),
-    ('Bird', 'Bird'),
-    ('Other', 'Other'),
+    ('dog', 'Dog'),
+    ('cat', 'Cat'),
+    ('rodent', 'Rodent'),
+    ('bird', 'Bird'),
+    ('other', 'Other'),
 ]
 
 
