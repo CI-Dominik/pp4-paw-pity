@@ -29,7 +29,7 @@ class Animal(models.Model):
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     image = CloudinaryField('image')
     location = models.CharField(max_length=100, blank=False, null=False)
-    is_approachable = models.BooleanField(default=False, blank=True, null=True)
+    is_approachable = models.BooleanField(default=False, blank=True, null=False)
 
     def __str__(self):
         return self.name
