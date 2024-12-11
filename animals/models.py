@@ -28,7 +28,8 @@ class Animal(models.Model):
     description = models.CharField(max_length=255, blank=True, null=True)
     owner = models.ForeignKey(CustomUser, on_delete=models.CASCADE)
     image = CloudinaryField('image')
-    is_found = models.BooleanField(default=False)
+    location = models.CharField(max_length=100, blank=False, null=False)
+    is_approachable = models.BooleanField(default=False, blank=True, null=True)
 
     def __str__(self):
         return self.name

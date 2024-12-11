@@ -14,13 +14,39 @@
                     <img src="{{ animal.image.url }}" alt="{{ animal.name }}" class="img-fluid animal-image"
                         style="max-width: 100%; height: auto;">
                 </div>
-                <!-- Animal details -->
                 <div class="col-md-6 col-sm-12 report-text">
-                    <h3 class="card-title">{{ animal.name }}</h3>
-                    <p class="card-text">Age: {{ animal.age }}</p>
-                    <p class="card-text">Description: {{ animal.description }}</p>
-                    <p class="card-text">Owner: {{ animal.owner.username }}</p>
-                    <p class="card-text">Species: {{ animal.species }}</p>
+                    <table class="table table-striped mt-4 mt-md-0">
+                        <tbody>
+                            <tr>
+                                <th>Name:</th>
+                                <td>{{ animal.name }}</td>
+                            </tr>
+                            <tr>
+                                <th>Age:</th>
+                                <td>{{ animal.age }}</td>
+                            </tr>
+                            <tr>
+                                <th>Description:</th>
+                                <td>{{ animal.description }}</td>
+                            </tr>
+                            <tr>
+                                <th>Owner:</th>
+                                <td>{{ animal.owner.username }}</td>
+                            </tr>
+                            <tr>
+                                <th>Species:</th>
+                                <td>{{ animal.species }}</td>
+                            </tr>
+                            <tr>
+                                <th>Location:</th>
+                                <td>{{ animal.location }}</td>
+                            </tr>
+                            <tr>
+                                <th>Approachable:</th>
+                                <td>{% if animal.is_approachable %}Yes{% else %}No{% endif %}</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
 
@@ -65,7 +91,7 @@
             </div>
 
             <!-- Add Comment -->
-            <h1 class="mt-4 text-center">Do you have clue?</h1>
+            <h1 class="mt-4 text-center">Do you have a clue?</h1>
             <!-- Check if the user is authenticated -->
             {% if user.is_authenticated %}
             <div class="card mt-4">

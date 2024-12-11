@@ -10,7 +10,7 @@ from django.contrib.auth.decorators import login_required
 
 # View to show all reports
 def reports_view(request):
-    animals = Animal.objects.filter(is_found=False)
+    animals = Animal.objects.all()
     paginator = Paginator(animals, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
