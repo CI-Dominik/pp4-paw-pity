@@ -52,6 +52,11 @@
                         <li class="nav-item">
                             <a class="nav-link text-white" href="{% url 'reports' %}">Lost Animals</a>
                         </li>
+                        {% if user.is_superuser %}
+                        <li>
+                            <a class="nav-link text-warning" href="{% url 'view_complaints' %}">Open Complaints</a>
+                        </li>
+                        {% endif %}
                         <!-- Check if user is logged in -->
                         {% if user.is_authenticated %}
                         <li class="nav-item">
@@ -172,6 +177,8 @@
 
     <!-- Bootstrap JavaScript -->
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/b267705d2e.js" crossorigin="anonymous"></script>
     <!-- Custom JavaScript -->
     <script src="{% static 'js/scripts.js' %}"></script>
 

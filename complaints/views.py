@@ -5,6 +5,7 @@ from .models import CommentComplaint
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import View
 
+
 def complain_comment(request, comment_id):
     comment = Comment.objects.get(id=comment_id)
     if request.method == 'POST':
@@ -27,3 +28,15 @@ class ViewComplaintsView(PermissionRequiredMixin, View):
     def get(self, request):
         complaints = CommentComplaint.objects.all()
         return render(request, 'complaints/complaints_list.html', {'complaints': complaints})
+
+
+def remove_comment(request, comment_id):
+    comment = Comment.objects.get(id=comment_id)
+    comment.delete()
+    return redirect('view_complaints')
+
+
+def delete_complaint(request, complaint_id):
+    complaint = CommentComplaint.objects.get(id=complaint_id)
+    complaint.delete()
+    return redirect('view_complaints')

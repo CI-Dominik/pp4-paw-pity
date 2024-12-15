@@ -77,7 +77,7 @@
                                         data-comment-id="{{ comment.id }}">Delete</a>
                                 </div>
                                 {% endif %}
-                                <a href="{% url 'complain_comment' comment.id %}" class="btn btn-danger">!</a>
+                                <a href="{% url 'complain_comment' comment.id %}" class="btn btn-danger"><i class="fa-solid fa-exclamation"></i></a>
                             </li>
                             {% endfor %}
                             {% else %}
