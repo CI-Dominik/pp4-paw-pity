@@ -63,6 +63,7 @@ INSTALLED_APPS = [
     'reports',
     'crispy_forms',
     'crispy_bootstrap5',
+    'complaints',
 ]
 
 SITE_ID = 1
