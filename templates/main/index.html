@@ -34,7 +34,7 @@
               </h5>
               <p class="card-text">
                 Location: {{ animal.location }}<br>
-                Approachable: {{ animal.is_approachable }}
+                Approachable: {% if animal.is_approachable %}Yes{% else %}No{% endif %}
               </p>
             </div>
           </div>
