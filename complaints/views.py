@@ -2,8 +2,6 @@ from django.shortcuts import render, redirect
 from .forms import CommentComplaintForm
 from reports.models import Comment
 from .models import CommentComplaint
-from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.views.generic import View
 
 
 def complain_comment(request, comment_id):
@@ -21,22 +19,24 @@ def complain_comment(request, comment_id):
     return render(request, 'complaints/complain_comment.html', {'form': form, 'comment': comment})
 
 
-class ViewComplaintsView(PermissionRequiredMixin, View):
-    permission_required = 'is_superuser'
-    raise_exception = True
-
-    def get(self, request):
-        complaints = CommentComplaint.objects.all()
-        return render(request, 'complaints/complaints_list.html', {'complaints': complaints})
+def view_complaints(request):
+    if not request.user.is_superuser:
+        return render(request, '403.html', status=403)
+    complaints = CommentComplaint.objects.all()
+    return render(request, 'complaints/complaints_list.html', {'complaints': complaints})
 
 
 def remove_comment(request, comment_id):
+    if not request.user.is_superuser:
+        return render(request, '403.html', status=403)
     comment = Comment.objects.get(id=comment_id)
     comment.delete()
     return redirect('view_complaints')
 
 
 def delete_complaint(request, complaint_id):
+    if not request.user.is_superuser:
+        return render(request, '403.html', status=403)
     complaint = CommentComplaint.objects.get(id=complaint_id)
     complaint.delete()
     return redirect('view_complaints')
