@@ -6,36 +6,47 @@
     <h1 class="text-center">Complaints List</h1>
 
     {% if complaints %}
-    <table class="table table-striped table-responsive-md">
-        <thead>
-            <tr>
-                <th class="text-center">ID (Animal name)</th>
-                <th class="text-center">Reason</th>
-                <th class="text-center">Created at</th>
-                <th class="text-center">Actions</th>
-            </tr>
-        </thead>
-        <tbody>
-            {% for complaint in complaints %}
-            <tr>
-                <td class="text-center">{{ complaint.comment.id }} ({{ complaint.comment.animal.name }})</td>
-                <td class="text-center">{{ complaint.reason }}</td>
-                <td class="text-center">{{ complaint.created_at }}</td>
-                <td class="text-center">
-                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                        data-bs-target="#delete-comment-modal" data-comment-id="{{ complaint.comment.id }}"><i
-                            class="fa-solid fa-check text-white"></i></button>
-                    <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
-                        data-bs-target="#delete-complaint-modal" data-complaint-id="{{ complaint.id }}"><i
-                            class="fa-solid fa-x text-white"></i></button>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+        {% for complaint in complaints %}
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ complaint.comment.id }} ({{ complaint.comment.animal.name }})</h5>
+                    <p class="card-text">{{ complaint.reason }}</p>
+                    <p class="card-text"><small class="text-muted">{{ complaint.created_at }}</small></p>
+                    <div class="d-flex justify-content-end">
+                        <button type="button" class="btn btn-sm btn-danger me-2" data-bs-toggle="modal"
+                            data-bs-target="#delete-comment-modal" data-comment-id="{{ complaint.comment.id }}"><i
+                                class="fa-solid fa-check text-white"></i></button>
+                        <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
+                            data-bs-target="#delete-complaint-modal" data-complaint-id="{{ complaint.id }}"><i
+                                class="fa-solid fa-x text-white"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
     {% else %}
     <p class="text-center">No complaints found.</p>
     {% endif %}
+
+    <!-- Pagination -->
+    <div class="pagination justify-content-center my-3 gap-1 text-center">
+        {% if complaints.has_previous %}
+        <a href="?page={{ complaints.previous_page_number }}" class="btn btn-secondary">Previous</a>
+        {% endif %}
+        {% for page in complaints.paginator.page_range %}
+        {% if page == complaints.number %}
+        <span class="btn btn-primary">{{ page }}</span>
+        {% else %}
+        <a href="?page={{ page }}" class="btn btn-secondary">{{ page }}</a>
+        {% endif %}
+        {% endfor %}
+        {% if complaints.has_next %}
+        <a href="?page={{ complaints.next_page_number }}" class="btn btn-secondary">Next</a>
+        {% endif %}
+    </div>
 
     <div class="modal fade" id="delete-comment-modal" tabindex="-1" role="dialog"
         aria-labelledby="delete-comment-modal-label" aria-hidden="true">
