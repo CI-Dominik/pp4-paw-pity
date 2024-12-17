@@ -3,7 +3,9 @@
 {% block content %}
 
 <div class="container">
-    <h1 class="text-center">Complaints List</h1>
+    <h1 class="text-center mt-2">Complaints List</h1>
+
+    <p class="lead">Here, you can review and manage complaints related to animal comments. Approve or dismiss complaints as needed.</p>
 
     {% if complaints %}
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
@@ -11,16 +13,18 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">{{ complaint.comment.id }} ({{ complaint.comment.animal.name }})</h5>
+                    <h5 class="card-title"><a href="{% url 'animal_detail' complaint.comment.animal.id %}" class="link-muted">{{ complaint.comment.animal.name }}</a></h5>
+                    <p class="card-text text-muted"><strong>Reported comment:</strong><br>{{ complaint.comment.content }}<br><strong>Author:</strong> {{ complaint.comment.user.username }}</p>
+                    
                     <p class="card-text">{{ complaint.reason }}</p>
                     <p class="card-text"><small class="text-muted">{{ complaint.created_at }}</small></p>
                     <div class="d-flex justify-content-end">
-                        <button type="button" class="btn btn-sm btn-danger me-2" data-bs-toggle="modal"
+                        <button type="button" class="btn btn-sm btn-success me-2" data-bs-toggle="modal"
                             data-bs-target="#delete-comment-modal" data-comment-id="{{ complaint.comment.id }}"><i
-                                class="fa-solid fa-check text-white"></i></button>
+                                class="fa-solid fa-check text-white"></i> Approve</button>
                         <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal"
                             data-bs-target="#delete-complaint-modal" data-complaint-id="{{ complaint.id }}"><i
-                                class="fa-solid fa-x text-white"></i></button>
+                                class="fa-solid fa-x text-white"></i> Dismiss</button>
                     </div>
                 </div>
             </div>
