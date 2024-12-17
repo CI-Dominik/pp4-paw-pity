@@ -27,7 +27,11 @@
                             </tr>
                             <tr>
                                 <th>Description:</th>
-                                <td>{{ animal.description }}</td>
+                                {% if animal.description %}
+                                    <td>{{ animal.description }}</td>
+                                {% else %}
+                                    <td>None provided</td>
+                                {% endif %}
                             </tr>
                             <tr>
                                 <th>Owner:</th>

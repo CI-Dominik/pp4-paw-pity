@@ -10,7 +10,7 @@ from django.contrib import messages
 @login_required
 def animals(request):
     message = request.session.get('message')
-    animal_list = Animal.objects.filter(owner=request.user)
+    animal_list = Animal.objects.filter(owner=request.user).order_by('-id')
     paginator = Paginator(animal_list, 8)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)

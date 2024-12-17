@@ -17,4 +17,6 @@ class CommentComplaintForm(forms.ModelForm):
             raise ValidationError('Please enter a reason for the complaint.')
         if len(reason) < 10:
             raise ValidationError('The reason must be at least 10 characters long.')
+        if len(reason) > 255:
+            raise ValidationError('The reason must be at most 255 characters long.')
         return reason

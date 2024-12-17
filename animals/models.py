@@ -15,7 +15,7 @@ SPECIES_CHOICE = [
 
 
 class Animal(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=20)
     age = models.IntegerField(
         validators=[
             MinValueValidator(0),
