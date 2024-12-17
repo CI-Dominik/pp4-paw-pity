@@ -1,6 +1,7 @@
 from django.db import models
 from main.models import CustomUser
 from animals.models import Animal
+from django.contrib import admin
 
 
 class Comment(models.Model):
@@ -10,4 +11,9 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return f"{self.animal.name}: {self.content} - {self.user.username}"
+        return f"{self.animal.name}: {self.content}"
+
+
+@admin.register(Comment)
+class CommentAdmin(admin.ModelAdmin):
+    list_display = ('user', 'animal', 'content', 'created_at')

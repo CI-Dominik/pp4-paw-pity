@@ -1,5 +1,6 @@
 from django.db import models
 from main.models import CustomUser
+from django.contrib import admin
 from cloudinary.models import CloudinaryField
 from django.core.validators import MinValueValidator, MaxValueValidator
 
@@ -33,3 +34,8 @@ class Animal(models.Model):
 
     def __str__(self):
         return self.name
+
+
+@admin.register(Animal)
+class AnimalAdmin(admin.ModelAdmin):
+    list_display = ('name', 'age', 'species', 'owner', 'location', 'is_approachable')
