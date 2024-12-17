@@ -17,12 +17,12 @@ class CustomLoginForm(AuthenticationForm):
 
 class CustomUserRegistrationForm(UserCreationForm):
     email = forms.EmailField(
-        max_length=50,
-        help_text='Required. 50 characters or fewer.'
+        max_length=30,
+        help_text='Required. 30 characters or fewer.'
         )
     username = forms.CharField(
-        max_length=30,
-        help_text='''Required. 30 characters or fewer. Letters, '''
+        max_length=15,
+        help_text='''Required. 15 characters or fewer. Letters, '''
         '''digits and @/./+/-/_ only.'''
         )
 
@@ -39,12 +39,14 @@ class CustomUserRegistrationForm(UserCreationForm):
         return email
 
     def clean_username(self):
-        username = self.cleaned_data.get('username')
-        if CustomUser.objects.filter(username=username).exists():
+        original_username = self.cleaned_data.get('username')
+        username = original_username.lower()
+        existing_user = CustomUser.objects.filter(username__iexact=username).first()
+        if existing_user:
             raise forms.ValidationError(
                 "This username is already taken."
-                )
-        return username
+            )
+        return original_username
 
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
