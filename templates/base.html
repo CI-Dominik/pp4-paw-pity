@@ -1,4 +1,10 @@
 {% load static %}
+{% url 'home' as home_url %}
+{% url 'reports' as reports_url %}
+{% url 'view_complaints' as complaints_url %}
+{% url 'animals' as animals_url %}
+{% url 'register' as register_url %}
+{% url 'login' as login_url %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -49,20 +55,20 @@
                 <!-- Navigation Elements -->
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
+                        <li class="nav-item {% if request.path == home_url %}active{% endif %}">
                             <a class="nav-link text-white" aria-current="page" href="{% url 'home' %}">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {% if request.path == reports_url %}active{% endif %}">
                             <a class="nav-link text-white" href="{% url 'reports' %}">Lost Animals</a>
                         </li>
                         {% if user.is_superuser %}
-                        <li>
+                        <li class="nav-item {% if request.path == complaints_url %}active{% endif %}">
                             <a class="nav-link text-warning" href="{% url 'view_complaints' %}">Open Complaints</a>
                         </li>
                         {% endif %}
                         <!-- Check if user is logged in -->
                         {% if user.is_authenticated %}
-                        <li class="nav-item">
+                        <li class="nav-item {% if request.path == animals_url %}active{% endif %}">
                             <a class="nav-link text-white" href="{% url 'animals' %}">Your Animals</strong></a>
                         </li>
                         <li class="nav-item">
@@ -71,10 +77,10 @@
                                 <strong>{{ user }})</strong></a>
                         </li>
                         {% else %}
-                        <li class="nav-item">
+                        <li class="nav-item {% if request.path == register_url %}active{% endif %}">
                             <a class="nav-link text-white" href="{% url 'register' %}">Register</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item {% if request.path == login_url %}active{% endif %}">
                             <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
                         </li>
                         {% endif %}
