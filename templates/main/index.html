@@ -23,26 +23,28 @@
   </div>
 
   {% if latest_animals %}
-    {% for animal in latest_animals %}
-      <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
-        <a href="{% url 'animal_detail' animal.id %}" class="link-muted">
-          <div class="card" style="width: 16rem;">
-            <img src="{{ animal.image.url }}" class="card-img-top square-image" alt="Photo of {{ animal.name }}">
-            <div class="card-body">
-              <h5 class="card-title">
-                {{ animal.name }}
-              </h5>
-              <p class="card-text">
-                Location: {{ animal.location }}<br>
-                Approachable: {% if animal.is_approachable %}Yes{% else %}No{% endif %}
-              </p>
-            </div>
-          </div>
-        </a>
+  {% for animal in latest_animals %}
+  <div class="d-flex justify-content-center col-xl-3 col-lg-4 col-md-6 col-sm-6 col-xs-12 my-3">
+    <a href="{% url 'animal_detail' animal.id %}" class="link-muted">
+      <div class="card" style="width: 16rem;">
+        <img src="{{ animal.image.url }}" class="card-img-top square-image" alt="Photo of {{ animal.name }}">
+        <div class="card-body">
+          <h5 class="card-title">
+            {{ animal.name }}
+          </h5>
+          <p class="card-text">
+            Location: {{ animal.location }}<br>
+            Approachable: {% if animal.is_approachable %}Yes{% else %}No{% endif %}
+          </p>
+          <!-- Empty Link for formatting -->
+          <a href="#"></a>
+        </div>
       </div>
-    {% endfor %}
+    </a>
+  </div>
+  {% endfor %}
   {% else %}
-    <p class="text-center">There are currently no reports of missing animals. That's great! :)</p>
+  <p class="text-center">There are currently no reports of missing animals. That's great! :)</p>
   {% endif %}
 </div>
 

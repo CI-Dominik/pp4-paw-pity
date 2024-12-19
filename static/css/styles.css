@@ -138,7 +138,7 @@ h1 {
 
 /* Hero Image */
 
-@media(width < 768px) {
+@media(width < 48rem) {
     .hero-image {
         height: 300px;
     }
@@ -162,7 +162,7 @@ h1 {
 
 }
 
-@media(width < 400px) {
+@media(width < 25rem) {
     .hero-image {
         height: 150px;
     }
