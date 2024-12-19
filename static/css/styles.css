@@ -7,7 +7,7 @@
 }
 
 :root {
-    --primary-color: #00989b;
+    --primary-color: #005F61;
 }
 
 .footer {
@@ -17,7 +17,7 @@
 }
 
 html {
-    background: url('../images/background.jpg') center center/cover;
+    background: url('../images/background.webp') center center/cover;
     min-height: 100vh;
 }
 
@@ -26,7 +26,7 @@ html {
 /* Navigation */
 
 .navbar {
-    background-color: #00989b;
+    background-color: var(--primary-color);
 }
 
 .navbar-toggler {
@@ -82,7 +82,7 @@ html {
 /* HERO SECTION */
 
 .hero-image {
-    background: url("../images/hero-image.jpg") center center/cover;
+    background: url("../images/hero-image.webp") center center/cover;
     height: 500px;
 }
 
