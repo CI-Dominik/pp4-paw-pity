@@ -21,6 +21,10 @@ html {
     min-height: 100vh;
 }
 
+h1 {
+    font-size: 2rem;
+}
+
 /* COLORS */
 
 /* Navigation */
@@ -145,6 +149,10 @@ html {
 
     .report-text {
         text-align: left;
+    }
+
+    h1 {
+        font-size: 1rem;
     }
 }
 
