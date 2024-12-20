@@ -42,10 +42,6 @@ Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.h
 <br>
 
 [**TESTING**](#testing)
-  * [Responsiveness](***********************************************)
-  * [Manual testing](***********************************************)
-    * PLACEHOLDER
-  * [404-page](***********************************************)
     
 <br>
 
@@ -75,10 +71,19 @@ Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.h
     
 <br>
 
-[**DEPLOYMENT**](***********************************************)
-  * [Visual Studio Code connection](***********************************************)
-  * [Cloning, committig and pushing via Visual Studio Code](***********************************************)
-  * [Deployment via GitHub Pages](***********************************************)
+[**DEPLOYMENT**](#deployment)
+  * [GitHub](#github-1)
+    * [Visual Studio Code connection](#visual-studio-code-connection)
+    * [Cloning, committing and pushing via Visual Studio Code](#cloning-committing-and-pushing-via-visual-studio-code)
+    * [Deployed page on GitHub](#deployed-page-on-github)
+  * [Heroku](#heroku)
+    * [Creating a new app](#creating-a-new-app)
+    * [Naming the app](#naming-the-app)
+    * [Deploy the app](#deploy-the-app)
+    * [Configure possible Config Vars](#configure-possible-config-vars)
+    * [Add buildpacks to the project](#add-buildpacks-to-the-project)
+    * [Select a branch to deploy](#select-a-branch-to-deploy)
+    * [Waiting for the project to deploy](#waiting-for-the-project-to-deploy)
     
 <br>
 
@@ -172,7 +177,7 @@ Every step of the way, the goal is to create a community that supports each othe
 * GitHub was used to store the homepage's files. Everything was deployed using GitHub Pages.
 
 ### Adobe Photoshop
-* Adobe Photoshop was used to create content images and wireframes.
+* Adobe Photoshop was used to create the wireframes.
 
 ### Fontawesome
 * Fontawesome was linked in the homepage's code to include icon files.
@@ -181,27 +186,7 @@ Every step of the way, the goal is to create a community that supports each othe
 
 ## **TESTING**
 
-## Manual testing
-
-### ***********************************************
-
-| TEST | EXPECTED | ACTUAL |
-|:-------------:|:---------------:|:-------------:|
-| ITEM | ITEM | ITEM |
-| ITEM | ITEM | ITEM |
-| ITEM | ITEM | ITEM |
-
-<br>
-
-![***********************************************](***********************************************)
-
-## Responsiveness
-
-| TEST | EXPECTED | ACTUAL |
-|:-------------:|:---------------:|:-------------:|
-| ITEM | ITEM | ITEM |
-| ITEM | ITEM | ITEM |
-| ITEM | ITEM | ITEM |
+* All manual tests can be viewed in the testing file: **[Testing File](TESTING.md)**
 
 ---
 
@@ -244,7 +229,9 @@ Every step of the way, the goal is to create a community that supports each othe
 ## **BUGS**
 
 ## Unfixed bugs
-* ***********************************************
+* When displaying the cards for missing animals, a responsive layout is only possible with an empty link added at the end of the card body. Currently, no fix has been found and must be addressed further.
+
+![Needed Link for formatting](docs/bugs/01.jpg)
 
 ---
 
@@ -270,51 +257,81 @@ Every step of the way, the goal is to create a community that supports each othe
 
 ## **DEPLOYMENT**
 
-## Visual Studio Code connection
+## GitHub
+
+### Visual Studio Code connection
 * A connection between Visual Studio Code and GitHub was established using the built-in function to include the ability to clone, stage, commit and push content directly to GitHub.
 Once you start Visual Studio Code with no connection, you simply need to click on the person icon in the lower left corner and select "GitHub". From there, you can connect your existing account to Visual Studio Code.
 
 <br>
 
-![Screenshot of the menu to connect Visual Studio Code with GitHub](***********************************************)
+![Screenshot of the menu to connect Visual Studio Code with GitHub](docs/vscode-connection.jpg)
 
-## Cloning, committing and pushing via Visual Studio Code
+### Cloning, committing and pushing via Visual Studio Code
 * Visual Studio code was used to stage all changed files and commit them with an included message directly to GitHub.
 
 <br>
 
-![Screenshot of the menu to commit changes to GitHub](***********************************************)
+![Screenshot of the menu to commit changes to GitHub](docs/vscode-commit.jpg)
 
-## Deployment via GitHub Pages
-* Once a version that should be visible on the internet has been established, to deploy a page, one needs to visit the GitHub repository that is used to store all data of the project.
-
-<br>
-
-![Screenshot of the settings menu in GitHub](***********************************************)
-
-On the top, there is an option that says *Settings*. In this menu, it is possible to deploy the page using the *Pages* sub-menu.
+### Deployed page on GitHub
+* The system is hosted via Heroku, but still available in the pages menu of GitHub.
 
 <br>
 
-![Screenshot of the settings list with Pages circled](***********************************************)
+![Screenshot of the deployed page in GitHub](docs/deployment-pages.jpg)
 
-Once one clicks on the *Pages* sub-menu, a new page will appear. On this one, one can select the branch of the project which contains the main data to deploy to GitHub Pages. In this case, the branch *Main* was used.
+## Heroku
 
-<br>
-
-![Screenshot of the branch selection in GitHub Pages](***********************************************)
-
-With the right branch selected, the input needs to be saved via the *Save* button.
+### Creating a new app
+* In the dashboard, navigate to the button *New* and *Create new app*.
 
 <br>
 
-![Screenshot of the deployed homepage menu](***********************************************)
+![Screenshot of Heroku deployment 01](docs/heroku/01.jpg)
 
-After the deployment, a link to the deployed page can be found on the front page of the GitHub repository. With a click on it to reveal the link that takes the visitor to the live page.
+### Naming the app
+* Give the app a new name and select the host region (US/EU). Then click *Create app*.
 
 <br>
 
-![Screenshot of the live view link](***********************************************)
+![Screenshot of Heroku deployment 02](docs/heroku/02.jpg)
+
+### Deploy the app
+* Click on the *Deploy* button on the top. In the bottom, select the platform on which the code is hosted, select the username and insert the name of the repository. GitHub was chosen here.
+
+<br>
+
+![Screenshot of Heroku deployment 03](docs/heroku/03.jpg)
+
+<br>
+
+![Screenshot of Heroku deployment 04](docs/heroku/04.jpg)
+
+### Configure possible Config Vars
+* Config vars are a way to securely store need information for connections like the PostgreSQL connection used in this project. Insert a key and value pair and add it.
+
+<br>
+
+![Screenshot of Heroku deployment 05](docs/heroku/05.jpg)
+
+### Select a branch to deploy
+* A GitHub branch that should be deployed can be found on the *Deploy* page. Here, the main branch was used to create the project.
+
+<br>
+
+![Screenshot of Heroku deployment 08](docs/heroku/08.jpg)
+
+### Waiting for the project to deploy
+* A window with all needed pieces of information will be displayed to inform the user of the current action. After successfully deploying the app, a *View* button will appear. It contains the link to the live site.
+
+<br>
+
+![Screenshot of Heroku deployment 01](docs/heroku/09.jpg)
+
+<br>
+
+![Screenshot of Heroku deployment 10](docs/heroku/10.jpg)
 
 ---
 
