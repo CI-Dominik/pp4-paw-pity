@@ -1,15 +1,17 @@
-# HEADLINE
+# **PAW PITY**: Give pets a chance to go home
 
-***********************************************
+Paw Pity represents a business with the goal to reunite lost pets with their owners.
+
+Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.herokuapp.com/)
 
 ![Mockup image of the Homepage](docs/mockup.jpg)
 
 ## **TABLE OF CONTENTS**
 
-[**USER EXPERIENCE**](***********************************************)
-  * [Target audience](***********************************************)
-  * [User's journey](***********************************************)
-  * [Intuitive and consistent design](***********************************************)
+[**USER EXPERIENCE**](#user-experience)
+  * [Target audience](#target-audience)
+  * [User's journey](#users-journey)
+  * [Intuitive and consistent design](#intuitive-and-consistent-design)
     
 <br>
 
@@ -19,10 +21,10 @@
 <br>
 
 [**DESIGN**](#design)
-  * [Color choice](***********************************************)
-  * [Wireframes](***********************************************)
-    * [Mobile view](***********************************************)
-    * [Desktop view](***********************************************)
+  * [Color choice](#color-choice)
+  * [Wireframes](#wireframes)
+    * [Mobile view](#mobile-view)
+    * [Desktop view](#desktop-view)
     
 <br>
 
@@ -158,10 +160,10 @@ Every step of the way, the goal is to create a community that supports each othe
 * JavaScript was used to create the functionality of the homepage.
 
 ### Python
-* ***********************************************
+* Python was used as a programming language for editing backend code.
 
 ### Django
-* ***********************************************
+* Django was used as a framework to manage views, URLs, models and HTML templates.
 
 ### Visual Studio Code
 * Visual Studio Code was used to clone the GitHub repository, edit the homepage's code and commit / push the results to GitHub.
