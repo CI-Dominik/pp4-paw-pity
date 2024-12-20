@@ -17,6 +17,7 @@ Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.h
 
 [**FEATURES**](#features)
   * PLACEHOLDER
+  * [Database Connection](#database-connection)
 
 <br>
 
@@ -45,29 +46,29 @@ Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.h
     
 <br>
 
-[**VALIDATOR TESTING**](***********************************************)
-  * [HTML validator](***********************************************)
-  * [CSS validator](***********************************************)
-  * [JavaScript validator (scripts.js)](***********************************************)
-  * ***********************************************
+[**VALIDATOR TESTING**](#validator-testing)
+  * [HTML validator](#html-validator)
+  * [CSS validator](#css-validator)
+  * [JavaScript validator (scripts.js)](#javascript-validator)
+  * [Flake8 validator](#flake8-validator)
 
 <br>
 
-[**USED PLATFORMS AND DEVICES**](***********************************************)
-  * [Browsers](***********************************************)
-  * [Smartphones](***********************************************)
+[**USED PLATFORMS AND DEVICES**](#used-platforms-and-devices)
+  * [Browsers](#browsers)
+  * [Smartphones](#smartphones)
 
 <br>
 
-[**BUGS**](***********************************************)
-  * [Unfixed bugs](***********************************************)
+[**BUGS**](#bugs)
+  * [Unfixed bugs](#unfixed-bugs)
 
 <br>
 
-[**ACCESSIBILTIY**](***********************************************)
-  * [Lighthouse testing](***********************************************)
-  * [WAVE extension](***********************************************)
-  * [Goal of accessibility measures](***********************************************)
+[**ACCESSIBILTIY**](#accessibility)
+  * [Lighthouse testing](#lighthouse-testing)
+  * [WAVE extension](#wave-extension)
+  * [Goal of accessibility measures](#goal-of-accessibility-measures)
     
 <br>
 
@@ -81,22 +82,22 @@ Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.h
     * [Naming the app](#naming-the-app)
     * [Deploy the app](#deploy-the-app)
     * [Configure possible Config Vars](#configure-possible-config-vars)
-    * [Add buildpacks to the project](#add-buildpacks-to-the-project)
     * [Select a branch to deploy](#select-a-branch-to-deploy)
     * [Waiting for the project to deploy](#waiting-for-the-project-to-deploy)
     
 <br>
 
 [**CREDITS**](#credits)
-  * [Fontawesome](***********************************************)
-  * [Techsini](***********************************************)
-  * [HTML validator](***********************************************)
-  * [CSS validator](***********************************************)
-  * [JavaScript validator](***********************************************)
-  * [W3Schools](***********************************************)
-  * [Favicon generator](***********************************************)
-  * [YouTube](***********************************************)
-  * [Visual Studio Code](***********************************************)
+  * [Fontawesome](#fontawesome-1)
+  * [Techsini](#techsini)
+  * [HTML validator](#html-validator-1)
+  * [CSS validator](#css-validator-1)
+  * [JavaScript validator](#javascript-validator-1)
+  * [Flake8 Extension](#flake8-extension)
+  * [W3Schools](#w3schools)
+  * [Favicon generator](#favicon-generator)
+  * [YouTube](#youtube)
+  * [Visual Studio Code](#visual-studio-code-1)
 
 ---
 
@@ -215,6 +216,11 @@ Every step of the way, the goal is to create a community that supports each othe
 * ***********************************************
 
 ![Screenshot of the JavaScript validation](***********************************************)
+
+### Flake8 validator
+* ***********************************************
+
+![Screenshot of the Flake8 extension](***********************************************)
 
 ---
 
@@ -357,8 +363,14 @@ Once you start Visual Studio Code with no connection, you simply need to click o
 ## [JavaScript validator](https://jshint.com/)
 * Used to verify JavaScript code.
 
+## [Flake8 Extension](https://flake8.pycqa.org/en/latest/)
+* Used to verify Python code.
+
 ## [W3Schools](https://www.w3schools.com/)
 * Used to lookup tips for the code.
+
+## [Favicon Generator](https://favicon.io/)
+* Used to generate the favicon for the homepage.
 
 ## [YouTube](https://youtube.com)
 * Videos for understanding some code areas.
