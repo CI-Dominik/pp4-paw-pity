@@ -130,16 +130,21 @@ Every step of the way, the goal is to create a community that supports each othe
 ***********************************************
 ***********************************************
 
+## Database connection
+* A database was used to store relevant pieces of information like usernames, animal data and comment complaints.
+
+![Screenshot of the database diagram](docs/database/database_diagram.jpg)
+
 ---
 
 ## **DESIGN**
 
 ## Color choice
-* ***********************************************
+* As the main colors and tones, a dark turquoise, white and black were chosen to keep a clean design and provide enough contrast for every device.
 
 <br>
 
-![Color palette of the homepage](***********************************************)
+![Color palette of the homepage](docs/colors.jpg)
 
 ## Wireframes
 
