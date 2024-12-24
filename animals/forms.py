@@ -86,7 +86,9 @@ class AnimalForm(forms.ModelForm):
     def clean_location(self):
         location = self.cleaned_data['location']
         if len(location) < 3:
-            raise forms.ValidationError('The location must be at least 3 characters long.')
+            raise forms.ValidationError(
+                'The location must be at least 3 characters long.'
+                )
         return location.capitalize()
 
     def clean_age(self):

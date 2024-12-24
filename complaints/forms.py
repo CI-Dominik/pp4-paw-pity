@@ -8,7 +8,9 @@ class CommentComplaintForm(forms.ModelForm):
         model = CommentComplaint
         fields = ['reason']
         widgets = {
-            'reason': forms.Textarea(attrs={'class': 'form-control', 'rows': 3})
+            'reason': forms.Textarea(
+                attrs={'class': 'form-control', 'rows': 3}
+                )
         }
 
     def clean_reason(self):
@@ -16,7 +18,11 @@ class CommentComplaintForm(forms.ModelForm):
         if not reason:
             raise ValidationError('Please enter a reason for the complaint.')
         if len(reason) < 10:
-            raise ValidationError('The reason must be at least 10 characters long.')
+            raise ValidationError(
+                'The reason must be at least 10 characters long.'
+                )
         if len(reason) > 255:
-            raise ValidationError('The reason must be at most 255 characters long.')
+            raise ValidationError(
+                'The reason must be at most 255 characters long.'
+                )
         return reason

@@ -41,7 +41,9 @@ class CustomUserRegistrationForm(UserCreationForm):
     def clean_username(self):
         original_username = self.cleaned_data.get('username')
         username = original_username.lower()
-        existing_user = CustomUser.objects.filter(username__iexact=username).first()
+        existing_user = CustomUser.objects.filter(
+            username__iexact=username
+            ).first()
         if existing_user:
             raise forms.ValidationError(
                 "This username is already taken."

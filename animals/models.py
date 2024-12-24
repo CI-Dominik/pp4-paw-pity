@@ -38,4 +38,11 @@ class Animal(models.Model):
 
 @admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
-    list_display = ('name', 'age', 'species', 'owner', 'location', 'is_approachable')
+    list_display = (
+        'name',
+        'age',
+        'species',
+        'owner',
+        'location',
+        'is_approachable'
+        )

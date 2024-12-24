@@ -59,11 +59,16 @@ def edit_animal(request, animal_id):
             name = form.cleaned_data.get('name').lower()
             owner = request.user
 
-            if Animal.objects.filter(name__iexact=name.lower(), owner=owner).exclude(id=animal.id).exists():
+            if Animal.objects.filter(
+                name__iexact=name.lower(), owner=owner
+            ).exclude(id=animal.id).exists():
                 form.add_error(
-                    'name', f'You have already registered an animal with that name.'
+                    'name',
+                    'You have already registered an animal with that name.'
                 )
-                return render(request, 'animals/edit_animal.html', {'form': form})
+                return render(
+                    request, 'animals/edit_animal.html', {'form': form}
+                    )
 
             else:
                 form.save()

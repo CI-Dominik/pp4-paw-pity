@@ -49,7 +49,7 @@ Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.h
 [**VALIDATOR TESTING**](#validator-testing)
   * [HTML validator](#html-validator)
   * [CSS validator](#css-validator)
-  * [JavaScript validator (scripts.js)](#javascript-validator)
+  * [JavaScript validator](#javascript-validator)
   * [Flake8 validator](#flake8-validator)
 
 <br>
@@ -206,21 +206,23 @@ Every step of the way, the goal is to create a community that supports each othe
 ![Screenshot of the HTML validation](***********************************************)
 
 ### CSS validator
-* The stylesheet file was checked via the W3C CSS Validation Service. No errors were found.
+* The custom stylesheet file styles.css was checked via the W3C CSS Validation Service. No errors were found.
 
 <br>
 
-![Screenshot of the CSS validation](***********************************************)
+![Screenshot of the CSS validation](docs/validation/css-validation.jpg)
 
 ### JavaScript validator
-* ***********************************************
+* The deleteModal.js file was tested using the JSHint validator. Only warnings pointing to the use of ES6 syntax and a reference to the bootstrap variable used elsewhere were mentioned.
 
-![Screenshot of the JavaScript validation](***********************************************)
+![Screenshot of the JavaScript validation for deleteModal.js](docs/validation/js-validation-deleteModal.jpg)
+
+* The commentDeleteModal.js file was tested using the JSHint validator. Only warnings pointing to the use of ES6 syntax were mentioned.
+
+![Screenshot of the JavaScript validation for commentDeleteModal.js](docs/validation/js-validation-commentDeleteModal.jpg)
 
 ### Flake8 validator
-* ***********************************************
-
-![Screenshot of the Flake8 extension](***********************************************)
+* Flake8 was used in Visual Studio Code to check the Python code in all files that were used, changed and adjusted. No errors occured.
 
 ---
 

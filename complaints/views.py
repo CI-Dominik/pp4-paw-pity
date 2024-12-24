@@ -17,7 +17,11 @@ def complain_comment(request, comment_id):
             return redirect('animal_detail', animal_id=comment.animal.id)
     else:
         form = CommentComplaintForm()
-    return render(request, 'complaints/complain_comment.html', {'form': form, 'comment': comment})
+    return render(
+        request,
+        'complaints/complain_comment.html',
+        {'form': form, 'comment': comment}
+        )
 
 
 def view_complaints(request):
@@ -27,7 +31,11 @@ def view_complaints(request):
     paginator = Paginator(complaints, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'complaints/complaints_list.html', {'complaints': page_obj})
+    return render(
+        request,
+        'complaints/complaints_list.html',
+        {'complaints': page_obj}
+        )
 
 
 def remove_comment(request, comment_id):
