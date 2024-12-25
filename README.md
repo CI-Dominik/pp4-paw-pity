@@ -203,7 +203,7 @@ Every step of the way, the goal is to create a community that supports each othe
 
 <br>
 
-![Screenshot of the HTML validation](***********************************************)
+![Screenshot of the HTML validation](docs/validation/html-validation.jpg)
 
 ### CSS validator
 * The custom stylesheet file styles.css was checked via the W3C CSS Validation Service. No errors were found.

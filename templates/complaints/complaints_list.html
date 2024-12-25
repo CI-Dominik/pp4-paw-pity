@@ -6,17 +6,21 @@
 <div class="container">
     <h1 class="text-center mt-2">Complaints List</h1>
 
-    <p class="lead">Here, you can review and manage complaints related to animal comments. Approve or dismiss complaints as needed.</p>
+    <p class="lead">Here, you can review and manage complaints related to animal comments. Approve or dismiss complaints
+        as needed.</p>
 
+    <!-- Generate complaints if there are any -->
     {% if complaints %}
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
         {% for complaint in complaints %}
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title"><a href="{% url 'animal_detail' complaint.comment.animal.id %}" class="link-muted">{{ complaint.comment.animal.name }}</a></h5>
-                    <p class="card-text text-muted"><strong>Reported comment:</strong><br>{{ complaint.comment.content }}<br><strong>Author:</strong> {{ complaint.comment.user.username }}</p>
-                    
+                    <h5 class="card-title"><a href="{% url 'animal_detail' complaint.comment.animal.id %}"
+                            class="link-muted">{{ complaint.comment.animal.name }}</a></h5>
+                    <p class="card-text text-muted"><strong>Reported comment:</strong><br>{{ complaint.comment.content
+                        }}<br><strong>Author:</strong> {{ complaint.comment.user.username }}</p>
+
                     <p class="card-text">{{ complaint.reason }}</p>
                     <p class="card-text"><small class="text-muted">{{ complaint.created_at }}</small></p>
                     <div class="d-flex justify-content-end">
@@ -53,44 +57,48 @@
         {% endif %}
     </div>
 
-    <div class="modal fade" id="delete-comment-modal" tabindex="-1" role="dialog"
-        aria-labelledby="delete-comment-modal-label" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="delete-comment-modal-label">Delete Comment</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to delete the selected comment?</p>
-                    <form method="post" id="delete-comment-form">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-primary">Delete</button>
-                    </form>
-                </div>
+</div>
+
+<!-- Delete comment modal -->
+<div class="modal fade" id="delete-comment-modal" tabindex="-1" role="dialog"
+    aria-labelledby="delete-comment-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete-comment-modal-label">Delete Comment</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete the selected comment?</p>
+                <form method="post" id="delete-comment-form">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <div class="modal fade" id="delete-complaint-modal" tabindex="-1" role="dialog"
-        aria-labelledby="delete-complaint-modal-label" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="delete-complaint-modal-label">Delete Complaint</h5>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to delete the selected complaint?</p>
-                    <form method="post" id="delete-complaint-form">
-                        {% csrf_token %}
-                        <button type="submit" class="btn btn-primary">Delete</button>
-                    </form>
-                </div>
+<!-- Delete complaint modal -->
+<div class="modal fade" id="delete-complaint-modal" tabindex="-1" role="dialog"
+    aria-labelledby="delete-complaint-modal-label" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="delete-complaint-modal-label">Delete Complaint</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Are you sure you want to delete the selected complaint?</p>
+                <form method="post" id="delete-complaint-form">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-primary">Delete</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
 
-    <script src="{% static 'js/deleteComplaintsModal.js' %}"></script>
+<script src="{% static 'js/deleteComplaintsModal.js' %}"></script>
 
-    {% endblock %}
+{% endblock %}
