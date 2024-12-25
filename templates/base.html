@@ -74,7 +74,7 @@
                         <!-- Check if user is logged in -->
                         {% if user.is_authenticated %}
                         <li class="nav-item {% if request.path == animals_url %}active{% endif %}">
-                            <a class="nav-link text-white" href="{% url 'animals' %}">Your Animals</strong></a>
+                            <a class="nav-link text-white" href="{% url 'animals' %}">Your Animals</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-white" href="#" data-bs-toggle="modal"
