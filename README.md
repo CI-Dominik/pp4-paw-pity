@@ -221,6 +221,10 @@ Every step of the way, the goal is to create a community that supports each othe
 
 ![Screenshot of the JavaScript validation for commentDeleteModal.js](docs/validation/js-validation-commentDeleteModal.jpg)
 
+* The deleteComplaintsModal.js file was tested using the JSHint validator. Only warnings pointing to the use of ES6 syntax were mentioned.
+
+![Screenshot of the JavaScript validation for commentDeleteModal.js](docs/validation/js-validation-deleteComplaintsModal.jpg)
+
 ### Flake8 validator
 * Flake8 was used in Visual Studio Code to check the Python code in all files that were used, changed and adjusted. No errors occured.
 
