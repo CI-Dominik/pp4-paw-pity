@@ -27,7 +27,7 @@ def complain_comment(request, comment_id):
 def view_complaints(request):
     if not request.user.is_superuser:
         return render(request, '403.html', status=403)
-    complaints = CommentComplaint.objects.all()
+    complaints = CommentComplaint.objects.all().order_by('-id')
     paginator = Paginator(complaints, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
