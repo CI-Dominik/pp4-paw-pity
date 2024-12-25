@@ -49,6 +49,10 @@ h1 {
     text-decoration: none;
 }
 
+.index-button {
+    max-width: 10rem;
+}
+
 /* Active Link */
 
 .navbar-nav .active {
