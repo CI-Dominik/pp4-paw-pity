@@ -1,17 +1,27 @@
-// Adjusted function learned from Code institute
-
 document.addEventListener("DOMContentLoaded", (event) => {
 
-    const deleteModal = new bootstrap.Modal(document.getElementById("deleteModal"));
-    const deleteButtons = document.getElementsByClassName("btn-delete");
-    const deleteConfirm = document.getElementById("deleteConfirm");
+    // Get the delete button elements
+    const deleteButtons = document.querySelectorAll('.delete-animal-button');
 
-    for (let button of deleteButtons) {
-        button.addEventListener("click", (e) => {
-            let animalId = e.target.getAttribute("animal_id");
-            deleteConfirm.href = `delete_animal/${animalId}`;
-            deleteModal.show();
+    // Add click event listener to each delete button
+    deleteButtons.forEach(button => {
+
+        button.addEventListener('click', function () {
+            // Get the animal ID from the button data attribute
+            const animalId = this.dataset.animalId;
+            // Show the delete confirmation modal
+            const modal = new bootstrap.Modal(document.getElementById('deleteModal'));
+            modal.show();
+            // Add click event listener to the delete confirmation button
+            document.getElementById('deleteConfirm').addEventListener('click', function () {
+                // Perform the delete action
+                const url = `/animals/delete_animal/${animalId}`;
+                window.location.href = url;
+                // Hide the modal
+                modal.hide();
+            });
         });
-    }
+
+    });
 
 });
