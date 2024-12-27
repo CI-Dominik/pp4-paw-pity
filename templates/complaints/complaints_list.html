@@ -18,8 +18,7 @@
                 <div class="card-body">
                     <h5 class="card-title"><a href="{% url 'animal_detail' complaint.comment.animal.id %}"
                             class="link-muted">{{ complaint.comment.animal.name }}</a></h5>
-                    <p class="card-text text-muted"><strong>Reported comment:</strong><br>{{ complaint.comment.content
-                        }}<br><strong>Author:</strong> {{ complaint.comment.user.username }}</p>
+                    <p class="card-text text-muted"><strong>Reported comment:</strong><br>{{ complaint.comment.content}}<br><strong>Author:</strong> {{ complaint.comment.user.username }}</p>
 
                     <p class="card-text">{{ complaint.reason }}</p>
                     <p class="card-text"><small class="text-muted">{{ complaint.created_at }}</small></p>

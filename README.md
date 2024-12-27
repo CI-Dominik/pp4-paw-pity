@@ -246,9 +246,7 @@ Every step of the way, the goal is to create a community that supports each othe
 ## **BUGS**
 
 ## Unfixed bugs
-* When displaying the cards for missing animals, a responsive layout is only possible with an empty link added at the end of the card body. Currently, no fix has been found and must be addressed further.
-
-![Needed Link for formatting](docs/bugs/01.jpg)
+* No unfixed bugs are known at this point.
 
 ---
 
