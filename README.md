@@ -16,7 +16,19 @@ Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.h
 <br>
 
 [**FEATURES**](#features)
-  * PLACEHOLDER
+  * [Navigation](#navigation)
+  * [Footer](#footer)
+  * [Registration](#registration)
+  * [Login](#login)
+  * [Logout](#logout)
+  * [Recent Reports](#recent-reports)
+  * [Your Animals](#your-animals)
+  * [Missing Animals](#missing-animals)
+  * [Animal Details](#aninmal-details)
+  * [Hints & Comments](#hints--comments)
+  * [Report a Comment](#report-a-comment)
+  * [Complaints](#complaints)
+  * [Admin Panel](#admin-panel)
   * [Database Connection](#database-connection)
 
 <br>
@@ -120,21 +132,101 @@ Every step of the way, the goal is to create a community that supports each othe
 
 ## **FEATURES**
 
-## ***********************************************
-* ***********************************************
+## Navigation
+* PLACEHOLDER
 
 <br>
 
-![Screenshot of the overall homepage design](***********************************************)
+![Screenshot of the Navigation](docs/features/navigation.jpg)
 
-***********************************************
-***********************************************
-***********************************************
+## Footer
+* PLACEHOLDER
 
-## Database connection
+<br>
+
+![Screenshot of the Footer](docs/features/footer.jpg)
+
+## Registration
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Registration](docs/features/registration.jpg)
+
+## Login
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Login](docs/features/login.jpg)
+
+## Logout
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Logout](docs/features/logout.jpg)
+
+## Recent Reports
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Recent Reports](docs/features/recent-reports.jpg)
+
+## Your Animals
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Your Animals Page](docs/features/your-animals.jpg)
+
+## Missing Animals
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Missing Animals](docs/features/missing-animals.jpg)
+
+## Aninmal Details
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Animal Details](docs/features/animal-details.jpg)
+
+## Hints & Comments
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Hints & Comments](docs/features/hints-comments.jpg)
+
+## Report a Comment
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Report a Comment Feature](docs/features/report-comment.jpg)
+
+## Complaints
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Complaints](docs/features/complaint.jpg)
+
+## Admin Panel
+* PLACEHOLDER
+
+<br>
+
+![Screenshot of the Admin Panel](docs/features/admin-panel.jpg)
+
+## Database Connection
 * A database was used to store relevant pieces of information like usernames, animal data and comment complaints.
 
-![Screenshot of the database diagram](docs/database/database_diagram.jpg)
+![Screenshot of the Database Diagram](docs/database/database_diagram.jpg)
 
 ---
 
