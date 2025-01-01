@@ -3,18 +3,18 @@
 
 {% block content %}
 
-<div class="row">
-  <!-- Hero -->
-  <div class="col col-12 hero-image d-flex align-items-center">
-    <div class="card hero-card">
-      <div class="card-body">
-        <h1 id="hero-text">Lost your beloved friend?</h1>
-        <p>Report a missing animal or help others bring their beloved companion back!</p>
-        <a href="{% url 'add_animal' %}" class="btn btn-primary hero-button fw-bold">REPORT</a>
-      </div>
-    </div>
+
+<div class="row no-gutters">
+  <div class="col-lg-8 order-lg-2 col-md-12 p-0 align-items-center">
+    <img src="{% static 'images/hero-image.webp' %}" class="img-fluid h-100 w-100 d-lg-block" alt="Hero Image">
+  </div>
+  <div class="col-lg-4 order-lg-1 col-md-12 hero p-3 text-white text-center">
+    <h1 class="display-4">Lost a friend?</h1>
+    <p class="lead">Place a missing report or help others find their pets.</p>
+    <a href="{% url 'reports' %}" class="btn hero-button fw-bold">REPORTS</a>
   </div>
 </div>
+
 
 <!-- Latest Animals -->
 <div class="row justify-content-center my-3">
