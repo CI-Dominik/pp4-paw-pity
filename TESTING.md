@@ -14,6 +14,8 @@ In this document, you will find all manual testing procedures that were used whe
 * [Lost Animals page](#lost-animals-page)
   * [Overview](#overview)
   * [Animal Details Page](#animal-details)
+  * [Edit Animal](#edit-animal)
+  * [Report Comment](#report-comment)
 * [Your Animals page](#your-animals-page)
   * [Animal List](#animal-list)
   * [Edit Animal](#edit-animal)
@@ -44,6 +46,8 @@ In this document, you will find all manual testing procedures that were used whe
 | Logging out | A modal should open and enable logout | Pass |
 | Clicking logout on the modal | The user should be safely logged out | Pass |
 | Clicking on Your Animals | The Your Animals page should be opened up | Pass |
+| Logging in as a superuser | Open Complaints link should be visible | Pass |
+| Logging in as a normal user | Open Complaints link should not be visible | Pass |
 
 ---
 
@@ -128,7 +132,12 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
+| Viewing the content | An overview over the last entries in the animal databse should be visible | Pass |
+| Viewing which information is displayed | The photo, name, location and if the animal is approachable should be displayed | Pass |
+| Increasing the number of entries to nine | Only eight items per page should be visible and a pagination is displayed | Pass |
+| Deleting all entries of the database | A message telling that there are currently no animals registered should appear | Pass |
+| Clicking on an entry | The corresponding animal details page should open up | Pass |
+| Clicking on register animal | The page to add an animal to the reports should open up | Pass |
 
 ### Animal Details
 
@@ -136,7 +145,36 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
+| Viewing the content | A list of the animal's information should be displayed as a table | Pass |
+| Adding a comment | The comment should be displayed on the animal's page | Pass |
+| Adding a comment that is long than 255 characters to the textfield | The addition of characters should be stopped | Pass |
+| Adding a comment that is longer than 255 characters with increasing the limit in devtools | A message should appear that the comment is too long | Pass |
+| Deleting a comment | A modal to cancel of delete the comment should appear | Pass |
+| Clicking on delete | The comment should be removed | Pass |
+| Viewing a comment as another user who is not the author | The comment should only display without the function to edit it | Pass |
+| Editing a comment via a URL while not being the author | A 403 page should appear | Pass |
+| Deleting a comment via a URL while not being the author | A 403 page should appear | Pass |
+
+### Edit Comment
+
+![Picture of the edit comment page](docs/testing/edit-comment.jpg)
+
+| Testing method | Expected result | Actual result |
+|:-------------:|:---------------:|:-------------:|
+| Editing a comment | The text should change on the animal page | Pass |
+| Editing a comment with more than 255 characters | The addition of characters should be stopped | Pass |
+| Editing a comment with more than 255 characters using an increased max-length in devtools | A message should appear that the comment is too long | Pass |
+
+### Report Comment
+
+![Picture of the report comment page](docs/testing/report-comment.jpg)
+
+| Testing method | Expected result | Actual result |
+|:-------------:|:---------------:|:-------------:|
+| Reporting a comment | The complaint should be visible in the complaints list | Pass |
+| Entering a reason with less than ten characters | A message should appear that the reason is too short | Pass |
+| Entering a reason with more than 255 characters | The addition of characters should be stopped | Pass |
+| Entering a reason with more than 255 characters with removing the required tag in devtools | A message should appear that tells the user that the message is too long | Pass |
 
 ---
 
