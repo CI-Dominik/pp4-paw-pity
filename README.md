@@ -2,7 +2,7 @@
 
 Paw Pity represents a business with the goal to reunite lost pets with their owners.
 
-Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.herokuapp.com/)
+Link to the live website: [Link to Paw Pity](https://pp4-paw-pity-7345de0c3b74.herokuapp.com/)<br>
 Link to the website's project board: [Link to the GitHub Project](https://github.com/users/CI-Dominik/projects/6)
 
 ![Mockup image of the Homepage](docs/mockup.jpg)
