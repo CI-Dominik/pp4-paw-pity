@@ -134,28 +134,28 @@ Every step of the way, the goal is to create a community that supports each othe
 ## **FEATURES**
 
 ## Navigation
-* PLACEHOLDER
+* A navigation bar that holds the page's title as a hyperlink to the starting page and several links to navigate to each of the homepage's sections. The active site gets highlighted in bold font weight.
 
 <br>
 
 ![Screenshot of the Navigation](docs/features/navigation.jpg)
 
 ## Footer
-* PLACEHOLDER
+* A footer containing pieces of information about Paw Pity, links to the homepage's sites and contact information. The email address and telephone number are clickable to open the needed app for communication.
 
 <br>
 
 ![Screenshot of the Footer](docs/features/footer.jpg)
 
 ## Registration
-* PLACEHOLDER
+* A registration page to create a new user. The username, email address and password need to be set here to create a unique user. Each username can only be used once, just like the email address.
 
 <br>
 
 ![Screenshot of the Registration](docs/features/registration.jpg)
 
 ## Login
-* PLACEHOLDER
+* A login form to log into a user account. Only registered users can sign in and only then some of the homepage's features are unlocked, like the comment function for each animal.
 
 <br>
 

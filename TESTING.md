@@ -39,6 +39,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Hovering over each link | Link should be underlined while hovered | Pass |
 | Clicking on each link | The current site link should be highlighted | Pass |
 | Visiing each link | The corresponding page should be opened | Pass |
+| Clicking on the page title | The starting page should open up | Pass |
 | Clicking on register | The registation site should open up | Pass |
 | Clicking on login | The login page should open up | Pass |
 | Logging in | The register and login link should disappear | Pass |
@@ -154,6 +155,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Viewing a comment as another user who is not the author | The comment should only display without the function to edit it | Pass |
 | Editing a comment via a URL while not being the author | A 403 page should appear | Pass |
 | Deleting a comment via a URL while not being the author | A 403 page should appear | Pass |
+| Trying to create a comment without a logged-in user | The comment form should not be visible and a hint that only registered people can comment should be visible | Pass |
 
 ### Edit Comment
 

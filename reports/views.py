@@ -30,10 +30,16 @@ def animal_detail(request, animal_id):
                 comment.user = request.user
                 comment.animal = animal
                 comment.save()
-                messages.success(request, 'Your comment was successfully added.')
+                messages.success(
+                    request,
+                    'Your comment was successfully added.'
+                    )
                 return redirect('animal_detail', animal_id=animal_id)
             else:
-                messages.error(request, 'Please correct the errors in your submitted form.')
+                messages.error(
+                    request,
+                    'Please correct the errors in your submitted form.'
+                    )
         else:
             messages.error(request, 'You must be logged in to comment.')
     else:
@@ -59,7 +65,10 @@ def edit_comment(request, animal_id, comment_id):
                 return redirect('animal_detail', animal_id=animal_id)
         else:
             form = CommentForm(instance=comment)
-        return render(request, 'reports/edit_comment.html', {'form': form, 'comment': comment})
+        return render(request, 'reports/edit_comment.html', {
+            'form': form,
+            'comment': comment
+            })
     else:
         return render(request, '403.html', status=403)
 
