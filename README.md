@@ -162,63 +162,63 @@ Every step of the way, the goal is to create a community that supports each othe
 ![Screenshot of the Login](docs/features/login.jpg)
 
 ## Logout
-* PLACEHOLDER
+* A logout modal to securely log out the user.
 
 <br>
 
 ![Screenshot of the Logout](docs/features/logout.jpg)
 
 ## Recent Reports
-* PLACEHOLDER
+* An overview over the last entries into the reports database, shown on the starting page.
 
 <br>
 
 ![Screenshot of the Recent Reports](docs/features/recent-reports.jpg)
 
 ## Your Animals
-* PLACEHOLDER
+* An overview over the registered animals for a user.
 
 <br>
 
 ![Screenshot of the Your Animals Page](docs/features/your-animals.jpg)
 
 ## Missing Animals
-* PLACEHOLDER
+* An overview over the missing animals reported by all users. Users can get details about the animal, like the location, if it is approachable or other things.
 
 <br>
 
 ![Screenshot of the Missing Animals](docs/features/missing-animals.jpg)
 
-## Aninmal Details
-* PLACEHOLDER
+## Animal Details
+* A detailed view over the animal's information.
 
 <br>
 
 ![Screenshot of the Animal Details](docs/features/animal-details.jpg)
 
 ## Hints & Comments
-* PLACEHOLDER
+* A comment area on the animal details page to leave hints for the whereabouts of the animal.
 
 <br>
 
 ![Screenshot of the Hints & Comments](docs/features/hints-comments.jpg)
 
 ## Report a Comment
-* PLACEHOLDER
+* A form to report a comment for false information and rude behaviour.
 
 <br>
 
 ![Screenshot of the Report a Comment Feature](docs/features/report-comment.jpg)
 
 ## Complaints
-* PLACEHOLDER
+* An overview over the complaints made for comments, with the ability to approve or deny.
 
 <br>
 
 ![Screenshot of the Complaints](docs/features/complaint.jpg)
 
 ## Admin Panel
-* PLACEHOLDER
+* An admin panel to manage database entries.
 
 <br>
 
@@ -244,11 +244,39 @@ Every step of the way, the goal is to create a community that supports each othe
 
 ### Mobile view
 
-![***********************************************](***********************************************)
+*INDEX PAGE*
+
+![Picture of the index page](docs/wireframes/index-mobile.jpg)
+
+*ANIMALS PAGE*
+
+![Picture of the animals page](docs/wireframes/animals-mobile.jpg)
+
+*REPORTS PAGE*
+
+![Picture of the reports page](docs/wireframes/reports-mobile.jpg)
+
+*COMPLAINTS PAGE*
+
+![Picture of the complaints page](docs/wireframes/complaints-mobile.jpg)
 
 ### Desktop view
 
-![***********************************************](***********************************************)
+*INDEX PAGE*
+
+![Picture of the index page](docs/wireframes/index-desktop.jpg)
+
+*ANIMALS PAGE*
+
+![Picture of the animals page](docs/wireframes/animals-desktop.jpg)
+
+*REPORTS PAGE*
+
+![Picture of the reports page](docs/wireframes/reports-desktop.jpg)
+
+*COMPLAINTS PAGE*
+
+![Picture of the complaints page](docs/wireframes/complaints-desktop.jpg)
 
 ---
 
