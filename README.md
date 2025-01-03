@@ -374,20 +374,67 @@ Every step of the way, the goal is to create a community that supports each othe
 ## **ACCESSIBILITY**
 
 ## Lighthouse testing
-* ***********************************************
 
-![***********************************************](***********************************************)
+### Mobile view
+* In mobile view, the results in performance drop down to about 74. This is due to the fact that Bootstrap was used locally and not via a link to the online version. This choice was made, because the styling should be available at all times and not dependent on an external service.<br>
+In addition, user-uploaded pictures in JPG format decreased the performance as well. This is an expected result, as most users will later upload their photos as a JPG file.
+
+*INDEX PAGE*
+
+![Picture of the index page's results](docs/lighthouse/index-mobile.jpg)
+
+*ANIMALS PAGE*
+
+![Picture of the animals page's results](docs/lighthouse/animals-mobile.jpg)
+
+*REPORTS PAGE*
+
+![Picture of the reports page's results](docs/lighthouse/reports-mobile.jpg)
+
+*COMPLAINTS PAGE*
+
+![Picture of the complaints page's results](docs/lighthouse/complaints-mobile.jpg)
+
+### Desktop view
+
+*INDEX PAGE*
+
+![Picture of the index page's results](docs/lighthouse/index-desktop.jpg)
+
+*ANIMALS PAGE*
+
+![Picture of the animals page's results](docs/lighthouse/animals-desktop.jpg)
+
+*REPORTS PAGE*
+
+![Picture of the reports page's results](docs/lighthouse/reports-desktop.jpg)
+
+*COMPLAINTS PAGE*
+
+![Picture of the complaints page's results](docs/lighthouse/complaints-desktop.jpg)
 
 ## WAVE extension
-* ***********************************************
+* The WAVE extension in Google Chrome was used to determine the accessibility rating of the homepage. Some alerts point to skipped heading levels which were used to better suit their content and redundant links which are the result of the use of buttons and navigation links on the same site.
 
-<br>
+*INDEX PAGE*
 
-![Screenshot of the WAVE extension validator](***********************************************)
+![Picture of the WAVE results for the index page](docs/wave-extension/index.jpg)
+
+*ANIMALS PAGE*
+
+![Picture of the WAVE results for the animals page](docs/wave-extension/animals.jpg)
+
+*REPORTS PAGE*
+
+![Picture of the WAVE results for the reports page](docs/wave-extension/reports.jpg)
+
+*COMPLAINTS PAGE*
+
+![Picture of the WAVE results for the complaints page](docs/wave-extension/complaints.jpg)
 
 ## Goal of accessibility measures
 
-* ***********************************************
+* The goal of accessibility is the same result, performance and view of the content for any person, regardless of their condition. For example, the colors are chosen in a way that all people can use the site without any problems. The contrast needs to be high enough to read every text.<br>
 
 ---
 
