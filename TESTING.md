@@ -188,7 +188,15 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
+| Viewing the content | All registered animals should show up | Pass |
+| Clicking on *Add an Animal* | The menu to register a new animal should show up | Pass |
+| Clicking on the animal's card | The animal details page of that animal should show up | Pass |
+| Clicking on *Edit* | The menu to edit an animal entry should show up | Pass |
+| Clicking on *Delete* | The confirmation modal to delete an animal should show up | Pass |
+| Clicking *Close* in the modal | The modal should disappear without any changes | Pass |
+| Clicking on the *X* in the modal | The modal should disappear without any changes | Pass |
+| Clicking outside of the modal | The modal should disappear without any changed | Pass |
+| Clicking on *Delete* in the modal | The modal should close and the entry should be deleted | Pass |
 
 ### Add Animal
 
@@ -196,7 +204,22 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
+| Entering correct data | The animal should be registered and shown on the *Your Animals* page | Pass |
+| Leaving the name field empty | A message should appear that the field is required | Pass |
+| Leaving the name field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the age field empty | A message should appear that the field is required | Pass |
+| Leaving the age field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Entering a negative number or one above 100 with changed min and max values in devtools | A message should appear that warns the user that the value needs to be between 0 and 100 | Pass |
+| Leaving the location field empty | A message should appear that the field is required | Pass |
+| Leaving the location field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the description field empty | The form should work and display *None provided* in the animal details page | Pass |
+| Trying to enter an age below 0 or over 100 | A message should appear that says that the value needs to be between 0 and 100 | Pass |
+| Leaving the image field empty | A message should appear that the field is required | Pass |
+| Trying to name the animal after one that is already registered | A message should appear that the animal is already registered | Pass |
+| Trying a different style of writing the same name | A message should appear that the animal is already registered | Pass |
+| Trying to enter a value for the name field with more than 20 characters | A message should appear that the entry is too long | Pass |
+| Trying to enter a value for the description field with more than 255 characters | A message should appear that the entry is too long | Pass |
+| Trying to enter a value for the location field with more than 100 characters | A message should appear that the entry is too long | Pass |
 
 ### Edit Animal
 
@@ -204,7 +227,19 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
+| Entering correct data | The animal should be edited and shown on the *Your Animals* page | Pass |
+| Leaving the name field empty | A message should appear that the field is required | Pass |
+| Leaving the name field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the age field empty | A message should appear that the field is required | Pass |
+| Leaving the age field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Entering a negative number or one above 100 with changed min and max values in devtools | A message should appear that warns the user that the value needs to be between 0 and 100 | Pass |
+| Leaving the location field empty | A message should appear that the field is required | Pass |
+| Leaving the location field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the description field empty | The form should work and display *None provided* in the animal details page | Pass |
+| Trying to enter an age below 0 or over 100 | A message should appear that says that the value needs to be between 0 and 100 | Pass |
+| Trying to enter a value for the name field with more than 20 characters | A message should appear that the entry is too long | Pass |
+| Trying to enter a value for the description field with more than 255 characters | A message should appear that the entry is too long | Pass |
+| Trying to enter a value for the location field with more than 100 characters | A message should appear that the entry is too long | Pass |
 
 ---
 
@@ -214,52 +249,13 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
-
----
-
-## Admin Panel
-
-### General
-
-![Picture of the admin panel](docs/testing/admin-panel.jpg)
-
-| Testing method | Expected result | Actual result |
-|:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
-
-### Users
-
-![Picture of the admin panel user page](docs/testing/admin-panel-user.jpg)
-
-| Testing method | Expected result | Actual result |
-|:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
-
-### Animals
-
-![Picture of the admin panel animal page](docs/testing/admin-panel-animals.jpg)
-
-| Testing method | Expected result | Actual result |
-|:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
-
-### Comments
-
-![Picture of the admin panel comments page](docs/testing/admin-panel-comments.jpg)
-
-| Testing method | Expected result | Actual result |
-|:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
-
-### Complaints
-
-![Picture of the admin panel complaints page](docs/testing/admin-panel-complaints.jpg)
-
-| Testing method | Expected result | Actual result |
-|:-------------:|:---------------:|:-------------:|
-| Test | Test | Test |
-
-# RESPONSIVENESS
-
-PLACEHOLDER
+| Viewing the content with no complaints | A text saying *No complaints found.* should appear | Pass |
+| Viewing the content with complaints | The animal's name, the original comment, the author and the date should appear | Pass |
+| Clicking on *Approve* | A modal to accept the change or cancel should appear | Pass |
+| Clicking the *X* in the modal | The modal should disappear without any changes | Pass |
+| Clicking outside of the modal | The modal should disappear without any changes | Pass |
+| Clicking on *Delete* | The complaint should disappear and the original comment should be deleted | Pass |
+| Clicking on *Dismiss* | A modal should appear and ask the user if they want to discard the complaint | Pass |
+| Clicking the *X* in the modal | The modal should disappear without any changes | Pass |
+| Clicking outside of the modal | The modal should disappear without any changes | Pass |
+| clicking on *Delete* | The complaint should disappear and the comment should still be on the animal's page | Pass |

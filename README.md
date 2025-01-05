@@ -229,6 +229,8 @@ Every step of the way, the goal is to create a community that supports each othe
 
 ![Screenshot of the Database Diagram](docs/database/database_diagram.jpg)
 
+**************************************************************** EXPLANATION ****************************************************************
+
 ---
 
 ## **DESIGN**

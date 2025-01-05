@@ -39,6 +39,8 @@ def add_animal(request):
                 animal = form.save(commit=False)
                 animal.owner = owner
                 animal.save()
+                success_message = f"{animal.name} successfully added!"
+                messages.success(request, success_message)
                 return redirect('animals')
     else:
         form = AnimalForm()
