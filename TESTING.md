@@ -252,7 +252,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Clicking on *Dismiss* | A modal should appear and ask the user if they want to discard the complaint | Pass |
 | Clicking the *X* in the modal | The modal should disappear without any changes | Pass |
 | Clicking outside of the modal | The modal should disappear without any changes | Pass |
-| clicking on *Delete* | The complaint should disappear, and the comment should still be on the animal's page | Pass |
+| Clicking on *Delete* | The complaint should disappear, and the comment should still be on the animal's page | Pass |
 
 # RESPONSIVENESS
 
