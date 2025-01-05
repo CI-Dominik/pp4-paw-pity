@@ -229,7 +229,23 @@ Every step of the way, the goal is to create a community that supports each othe
 
 ![Screenshot of the Database Diagram](docs/database/database_diagram.jpg)
 
-**************************************************************** EXPLANATION ****************************************************************
+A PostgreSQL database was used to store all the relevant data.
+
+**CustomUser**
+
+The CustomUser model was created to make the email field unique. In the further development process, this model was used instead of the original User model.
+
+**Animal**
+
+The Animal model was created to store relevant pieces of information about the animals. Those were used to be displayed on the animals and reports page, in addition to the edit pages to fill the data in the forms. This model has a many-to-one relationship to the CustomUser model. In case the user gets deleted, the animal model also will be removed.
+
+**Comment**
+
+In the Comment model, all information regarding a new comment on the animal details page were saved. It links to an animal in a many-to-one relationship and gets deleted once the animal gets removed.
+
+**CommentComplaint**
+
+The CommentComplaint model was used to store data about reported comments. It links to a comment in a many-to-one relationship and gets deleted once the superuser decides it or the comment gets deleted.
 
 ---
 

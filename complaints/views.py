@@ -3,6 +3,7 @@ from .forms import CommentComplaintForm
 from reports.models import Comment
 from .models import CommentComplaint
 from django.core.paginator import Paginator
+from django.contrib import messages
 
 
 def complain_comment(request, comment_id):
@@ -14,6 +15,7 @@ def complain_comment(request, comment_id):
             complaint.comment = comment
             complaint.user = request.user
             complaint.save()
+            messages.success(request, 'Your complaint was successfully sent.')
             return redirect('animal_detail', animal_id=comment.animal.id)
     else:
         form = CommentComplaintForm()

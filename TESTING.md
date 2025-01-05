@@ -20,12 +20,6 @@ In this document, you will find all manual testing procedures that were used whe
   * [Animal List](#animal-list)
   * [Edit Animal](#edit-animal)
 * [Complaints page](#complaints-page)
-* [Admin Panel](#admin-panel)
-  * [General](#general)
-  * [Users](#users)
-  * [Animals](#animals)
-  * [Comments](#comments)
-  * [Complaints](#complaints)
 
 * [RESPONSIVENESS](#responsiveness)
 
@@ -259,3 +253,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Clicking the *X* in the modal | The modal should disappear without any changes | Pass |
 | Clicking outside of the modal | The modal should disappear without any changes | Pass |
 | clicking on *Delete* | The complaint should disappear and the comment should still be on the animal's page | Pass |
+
+# RESPONSIVENESS
+
+PLACEHOLDER
