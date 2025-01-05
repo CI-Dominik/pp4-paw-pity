@@ -256,4 +256,17 @@ In this document, you will find all manual testing procedures that were used whe
 
 # RESPONSIVENESS
 
-PLACEHOLDER
+All pages were checked for their responsiveness to ensure the best results for any device.<br>
+On devices with smaller screens, a burger menu is shown and the links switch into a dropdown menu. 
+
+*DESKTOP VIEW*
+
+![Picture of the desktop view](docs/testing/responsiveness/desktop-view.jpg)
+
+*TABLET VIEW*
+
+![Picture of the desktop view](docs/testing/responsiveness/tablet-view.jpg)
+
+*SMARTPHONE VIEW*
+
+![Picture of the desktop view](docs/testing/responsiveness/smartphone-view.jpg)
