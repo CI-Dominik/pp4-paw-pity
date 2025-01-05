@@ -565,3 +565,6 @@ Once you start Visual Studio Code with no connection, you simply need to click o
 
 ## [Visual Studio Code](https://code.visualstudio.com/)
 * Used to generate HTML boilerplate code and code editing.
+
+## Special thanks
+* A special thank you to my mentor Gareth McGirr who helped me along my journey and also to my best friend Frederic, who provided me with helpful insights and assisted me with many testing scenarios.
