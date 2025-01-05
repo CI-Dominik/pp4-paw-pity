@@ -77,7 +77,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Entering false login information | A message should tell the user that the typed information is incorrect | Pass |
 | Entering the right username, but the wrong password | A message should tell the user that the typed information is incorrect | Pass |
 | Leaving the username field empty | A message should tell the user that it is a required field | Pass |
-| Leaving the fields empty and removing the required tag in devools | A message should tell the user that the field is required | Pass |
+| Leaving the fields empty and removing the *required* tag in devtools | A message should tell the user that the field is required | Pass |
 
 ---
 
@@ -170,7 +170,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Reporting a comment | The complaint should be visible in the complaints list | Pass |
 | Entering a reason with less than ten characters | A message should appear that the reason is too short | Pass |
 | Entering a reason with more than 255 characters | The addition of characters should be stopped | Pass |
-| Entering a reason with more than 255 characters with removing the required tag in devtools | A message should appear that tells the user that the message is too long | Pass |
+| Entering a reason with more than 255 characters with removing the *required* tag in devtools | A message should appear that tells the user that the message is too long | Pass |
 
 ---
 
@@ -200,12 +200,12 @@ In this document, you will find all manual testing procedures that were used whe
 |:-------------:|:---------------:|:-------------:|
 | Entering correct data | The animal should be registered and shown on the *Your Animals* page | Pass |
 | Leaving the name field empty | A message should appear that the field is required | Pass |
-| Leaving the name field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the name field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Leaving the age field empty | A message should appear that the field is required | Pass |
-| Leaving the age field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the age field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Entering a negative number or one above 100 with changed min and max values in devtools | A message should appear that warns the user that the value needs to be between 0 and 100 | Pass |
 | Leaving the location field empty | A message should appear that the field is required | Pass |
-| Leaving the location field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the location field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Leaving the description field empty | The form should work and display *None provided* in the animal details page | Pass |
 | Trying to enter an age below 0 or over 100 | A message should appear that says that the value needs to be between 0 and 100 | Pass |
 | Leaving the image field empty | A message should appear that the field is required | Pass |
@@ -223,12 +223,12 @@ In this document, you will find all manual testing procedures that were used whe
 |:-------------:|:---------------:|:-------------:|
 | Entering correct data | The animal should be edited and shown on the *Your Animals* page | Pass |
 | Leaving the name field empty | A message should appear that the field is required | Pass |
-| Leaving the name field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the name field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Leaving the age field empty | A message should appear that the field is required | Pass |
-| Leaving the age field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the age field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Entering a negative number or one above 100 with changed min and max values in devtools | A message should appear that warns the user that the value needs to be between 0 and 100 | Pass |
 | Leaving the location field empty | A message should appear that the field is required | Pass |
-| Leaving the location field empty and deleting the required tag in devtools | A message should appear that the field is required | Pass |
+| Leaving the location field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Leaving the description field empty | The form should work and display *None provided* in the animal details page | Pass |
 | Trying to enter an age below 0 or over 100 | A message should appear that says that the value needs to be between 0 and 100 | Pass |
 | Trying to enter a value for the name field with more than 20 characters | A message should appear that the entry is too long | Pass |
