@@ -302,10 +302,10 @@ The CommentComplaint model was used to store data about reported comments. It li
 * HTML (HyperText Markup Language) was used to create the structure of the homepage.
 
 ### CSS
-* All styled were applied by using and linking a CSS (Cascading Style Sheet) file.
+* All styles were applied by using and linking a CSS (Cascading Style Sheet) file.
 
 ### JavaScript
-* JavaScript was used to create the functionality of the homepage.
+* JavaScript was used to create the functionality of the modals.
 
 ### Python
 * Python was used as a programming language for editing backend code.
@@ -317,7 +317,7 @@ The CommentComplaint model was used to store data about reported comments. It li
 * Visual Studio Code was used to clone the GitHub repository, edit the homepage's code and commit / push the results to GitHub.
 
 ### GitHub
-* GitHub was used to store the homepage's files. Everything was deployed using GitHub Pages.
+* GitHub was used to store the homepage's files.
 
 ### Adobe Photoshop
 * Adobe Photoshop was used to create the wireframes.
