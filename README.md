@@ -122,7 +122,7 @@ Link to the website's project board: [Link to the GitHub Project](https://github
 ## User's journey
 * When users arrive at our website, they are welcomed with a clear and intuitive interface. The platform is divided into two main areas:
 
-My Pets: Here, users can add detailed profiles for their pets. This includes essential information like their name, breed, and photos, making it easier to act quickly if a pet ever goes missing.
+My Pets: Here, users can add detailed profiles for their pets. This includes essential information like their name, breed, and photos, making it easier to act quickly if a pet ever goes missing.<br>
 Missing Animals: This section showcases a list of pets that have been reported missing. Users can browse through the profiles, filter based on location or type, and provide helpful hints if they’ve seen a reported pet.
 Every step of the way, the goal is to create a community that supports each other in reuniting with their beloved pets.
 
