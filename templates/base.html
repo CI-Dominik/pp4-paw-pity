@@ -66,6 +66,7 @@
                         <li class="nav-item {% if request.path == reports_url %}active{% endif %}">
                             <a class="nav-link text-white" href="{% url 'reports' %}">Lost Animals</a>
                         </li>
+                        <!-- Check if user is a superuser -->
                         {% if user.is_superuser %}
                         <li class="nav-item {% if request.path == complaints_url %}active{% endif %}">
                             <a class="nav-link text-warning" href="{% url 'view_complaints' %}">Open Complaints</a>
@@ -128,6 +129,12 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="{% url 'reports' %}">Lost Animals</a>
                             </li>
+                            <!-- Check if user is a superuser-->
+                            {% if user.is_superuser %}
+                            <li class="nav-item">
+                                <a class="nav-link text-warning" href="{% url 'view_complaints' %}">Open Complaints</a>
+                            </li>
+                            {% endif %}
                             <!-- Check if user is logged in -->
                             {% if user.is_authenticated %}
                             <li class="nav-item">
