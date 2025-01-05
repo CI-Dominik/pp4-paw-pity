@@ -32,9 +32,9 @@ In this document, you will find all manual testing procedures that were used whe
 | Loading the page | Navigation should display with the menu buttons Home, Lost Animals, Register and Login | Pass |
 | Hovering over each link | Link should be underlined while hovered | Pass |
 | Clicking on each link | The current site link should be highlighted | Pass |
-| Visiing each link | The corresponding page should be opened | Pass |
+| Visiting each link | The corresponding page should be opened | Pass |
 | Clicking on the page title | The starting page should open up | Pass |
-| Clicking on register | The registation site should open up | Pass |
+| Clicking on register | The registration site should open up | Pass |
 | Clicking on login | The login page should open up | Pass |
 | Logging in | The register and login link should disappear | Pass |
 | Logging in | The Your Animals and Log out link should appear | Pass |
@@ -52,7 +52,7 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Registering with correct data | An account should be registered and the user should be logged in | Pass |
+| Registering with correct data | An account should be registered, and the user should be logged in | Pass |
 | Entering a name with a space in it | The registration should be blocked | Pass |
 | Entering a name that is already registered | The registration should be blocked, regardless of typing | Pass |
 | Entering an email address that is already in use | A message should tell the user that the email address is already in use | Pass |
@@ -62,8 +62,8 @@ In this document, you will find all manual testing procedures that were used whe
 | Entering the second password wrongly | A message should tell the user that the passwords do not match | Pass |
 | Entering only numbers for the password | A message should tell the user that the password cannot be completely numeric | Pass |
 | Leaving the username, email address or password field empty | A message should tell the user that the content needs to be inserted | Pass |
-| Entering a username and email address that exeeds the maximum length | A message should tell the user that the entry is too long | Pass |
-| Entering a username and email address that exeeds the maximum length with the max-length value changed in devtools | A message should tell the user that the entry is too long | Pass |
+| Entering a username and email address that exceeds the maximum length | A message should tell the user that the entry is too long | Pass |
+| Entering a username and email address that exceeds the maximum length with the max-length value changed in devtools | A message should tell the user that the entry is too long | Pass |
 
 ---
 
@@ -92,7 +92,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Logging in | The register and login link should disappear | Pass |
 | Logging out | The modal should be called | Pass |
 | Clicking on the phone number | The corresponding phone app should be opened | Pass |
-| Clicking on the email address | An email program should popup if one is used | Pass |
+| Clicking on the email address | An email program should pop up if one is used | Pass |
 
 ---
 
@@ -113,7 +113,7 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Viewing the content | The last three entries in the reports database should appear | Test |
+| Viewing the content | The last three entries in the reports' database should appear | Test |
 | Erasing all database entries and viewing the content | A message saying that there are no reports should appear | Pass |
 | Clicking on an entry | The related animal details page should open up | Pass |
 
@@ -127,9 +127,9 @@ In this document, you will find all manual testing procedures that were used whe
 
 | Testing method | Expected result | Actual result |
 |:-------------:|:---------------:|:-------------:|
-| Viewing the content | An overview over the last entries in the animal databse should be visible | Pass |
+| Viewing the content | An overview over the last entries in the animal database should be visible | Pass |
 | Viewing which information is displayed | The photo, name, location and if the animal is approachable should be displayed | Pass |
-| Increasing the number of entries to nine | Only eight items per page should be visible and a pagination is displayed | Pass |
+| Increasing the number of entries to nine | Only eight items per page should be visible, and a pagination is displayed | Pass |
 | Deleting all entries of the database | A message telling that there are currently no animals registered should appear | Pass |
 | Clicking on an entry | The corresponding animal details page should open up | Pass |
 | Clicking on register animal | The page to add an animal to the reports should open up | Pass |
@@ -142,9 +142,9 @@ In this document, you will find all manual testing procedures that were used whe
 |:-------------:|:---------------:|:-------------:|
 | Viewing the content | A list of the animal's information should be displayed as a table | Pass |
 | Adding a comment | The comment should be displayed on the animal's page | Pass |
-| Adding a comment that is long than 255 characters to the textfield | The addition of characters should be stopped | Pass |
+| Adding a comment that is long than 255 characters to the text field | The addition of characters should be stopped | Pass |
 | Adding a comment that is longer than 255 characters with increasing the limit in devtools | A message should appear that the comment is too long | Pass |
-| Deleting a comment | A modal to cancel of delete the comment should appear | Pass |
+| Deleting a comment | A modal to cancel or delete the comment should appear | Pass |
 | Clicking on delete | The comment should be removed | Pass |
 | Viewing a comment as another user who is not the author | The comment should only display without the function to edit it | Pass |
 | Editing a comment via a URL while not being the author | A 403 page should appear | Pass |
@@ -190,7 +190,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Clicking *Close* in the modal | The modal should disappear without any changes | Pass |
 | Clicking on the *X* in the modal | The modal should disappear without any changes | Pass |
 | Clicking outside of the modal | The modal should disappear without any changed | Pass |
-| Clicking on *Delete* in the modal | The modal should close and the entry should be deleted | Pass |
+| Clicking on *Delete* in the modal | The modal should close, and the entry should be deleted | Pass |
 
 ### Add Animal
 
@@ -248,16 +248,16 @@ In this document, you will find all manual testing procedures that were used whe
 | Clicking on *Approve* | A modal to accept the change or cancel should appear | Pass |
 | Clicking the *X* in the modal | The modal should disappear without any changes | Pass |
 | Clicking outside of the modal | The modal should disappear without any changes | Pass |
-| Clicking on *Delete* | The complaint should disappear and the original comment should be deleted | Pass |
+| Clicking on *Delete* | The complaint should disappear, and the original comment should be deleted | Pass |
 | Clicking on *Dismiss* | A modal should appear and ask the user if they want to discard the complaint | Pass |
 | Clicking the *X* in the modal | The modal should disappear without any changes | Pass |
 | Clicking outside of the modal | The modal should disappear without any changes | Pass |
-| clicking on *Delete* | The complaint should disappear and the comment should still be on the animal's page | Pass |
+| clicking on *Delete* | The complaint should disappear, and the comment should still be on the animal's page | Pass |
 
 # RESPONSIVENESS
 
 All pages were checked for their responsiveness to ensure the best results for any device.<br>
-On devices with smaller screens, a burger menu is shown and the links switch into a dropdown menu. 
+On devices with smaller screens, a burger menu is shown, and the links switch into a dropdown menu. 
 
 *DESKTOP VIEW*
 

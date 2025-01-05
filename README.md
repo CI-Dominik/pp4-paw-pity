@@ -25,7 +25,7 @@ Link to the website's project board: [Link to the GitHub Project](https://github
   * [Recent Reports](#recent-reports)
   * [Your Animals](#your-animals)
   * [Missing Animals](#missing-animals)
-  * [Animal Details](#aninmal-details)
+  * [Animal Details](#animal-details)
   * [Hints & Comments](#hints--comments)
   * [Report a Comment](#report-a-comment)
   * [Complaints](#complaints)
@@ -204,7 +204,7 @@ Every step of the way, the goal is to create a community that supports each othe
 ![Screenshot of the Hints & Comments](docs/features/hints-comments.jpg)
 
 ## Report a Comment
-* A form to report a comment for false information and rude behaviour.
+* A form to report a comment for false information and rude behavior.
 
 <br>
 
@@ -365,7 +365,7 @@ The CommentComplaint model was used to store data about reported comments. It li
 ![Screenshot of the JavaScript validation for commentDeleteModal.js](docs/validation/js-validation-deleteComplaintsModal.jpg)
 
 ### Flake8 validator
-* Flake8 was used in Visual Studio Code to check the Python code in all files that were used, changed and adjusted. No errors occured.
+* Flake8 was used in Visual Studio Code to check the Python code in all files that were used, changed and adjusted. No errors occurred.
 
 ---
 
