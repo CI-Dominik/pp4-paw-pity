@@ -25,9 +25,13 @@ class CommentForm(forms.ModelForm):
             raise forms.ValidationError('Please enter a comment.')
         # Check if the comment is at least 20 characters long
         if len(content) < 20:
-            raise forms.ValidationError('The comment must be at least 20 characters long.')
+            raise forms.ValidationError(
+                'The comment must be at least 20 characters long.'
+                )
         # Check if the comment is at most 255 characters long
         if len(content) > 255:
-            raise forms.ValidationError('The comment must be at most 255 characters long.')
+            raise forms.ValidationError(
+                'The comment must be at most 255 characters long.'
+                )
 
         return content

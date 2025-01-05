@@ -8,10 +8,21 @@ from django.contrib.auth.admin import UserAdmin
 class CustomUserAdmin(UserAdmin):
     fieldsets = (
         (None, {'fields': ('username', 'email', 'password')}),
-        ('Permissions', {'fields': ('is_active', 'is_staff', 'is_superuser', 'groups', 'user_permissions')}),
+        ('Permissions', {'fields': (
+            'is_active',
+            'is_staff',
+            'is_superuser',
+            'groups',
+            'user_permissions'
+            )}),
     )
     add_fieldsets = (
-        (None, {'classes': ('wide',), 'fields': ('username', 'email', 'password1', 'password2')}),
+        (None, {'classes': ('wide',), 'fields': (
+            'username',
+            'email',
+            'password1',
+            'password2'
+            )}),
     )
 
 
