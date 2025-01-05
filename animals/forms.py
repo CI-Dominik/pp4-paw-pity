@@ -72,10 +72,12 @@ class AnimalForm(forms.ModelForm):
         )
     )
 
+    # Clean up name field
     def clean_name(self):
         name = self.cleaned_data['name']
         return name.capitalize()
 
+    # Check if animal is already registered
     def clean_owner_duplicate(self):
         name = self.cleaned_data['name']
         owner = self.instance.owner
@@ -83,6 +85,7 @@ class AnimalForm(forms.ModelForm):
             raise forms.ValidationError(f'You have already registered {name}.')
         return name.capitalize()
 
+    # Check if location is at least 3 characters long
     def clean_location(self):
         location = self.cleaned_data['location']
         if len(location) < 3:
@@ -91,6 +94,7 @@ class AnimalForm(forms.ModelForm):
                 )
         return location.capitalize()
 
+    # Check if age is between 0 and 100
     def clean_age(self):
         age = self.cleaned_data.get('age')
         if age < 0 or age > 100:

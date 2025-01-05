@@ -7,6 +7,7 @@ from django.shortcuts import redirect
 from django.contrib import messages
 
 
+# View to manage login
 def login_view(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -30,6 +31,7 @@ def login_view(request):
     return render(request, 'accountsystem/login.html', {'form': form})
 
 
+# View to manage registration
 def register(request):
     if request.user.is_authenticated:
         return redirect('home')
@@ -49,6 +51,7 @@ def register(request):
     return render(request, 'accountsystem/register.html', {'form': form})
 
 
+# View to manage logout
 def logout_view(request):
     if not request.user.is_authenticated:
         return redirect('home')

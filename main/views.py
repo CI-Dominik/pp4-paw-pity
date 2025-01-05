@@ -3,6 +3,7 @@ from django.shortcuts import redirect
 from animals.models import Animal
 
 
+# View to show the homepage
 def home(request):
     latest_animals = Animal.objects.all().order_by('-id')[:3]
     return render(

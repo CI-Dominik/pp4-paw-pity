@@ -4,6 +4,7 @@ from main.models import CustomUser
 from django.contrib.auth.forms import UserCreationForm
 
 
+# Custom login form
 class CustomLoginForm(AuthenticationForm):
 
     class Meta:
@@ -15,6 +16,7 @@ class CustomLoginForm(AuthenticationForm):
         self.fields['password'].widget.attrs.update({'class': 'form-control'})
 
 
+# Custom registration form
 class CustomUserRegistrationForm(UserCreationForm):
     email = forms.EmailField(
         max_length=30,
@@ -30,6 +32,7 @@ class CustomUserRegistrationForm(UserCreationForm):
         model = CustomUser
         fields = ('username', 'email', 'password1', 'password2')
 
+    # Check if email is already taken
     def clean_email(self):
         email = self.cleaned_data.get('email')
         if CustomUser.objects.filter(email=email).exists():
@@ -38,6 +41,7 @@ class CustomUserRegistrationForm(UserCreationForm):
                 )
         return email
 
+    # Check if username is already taken
     def clean_username(self):
         original_username = self.cleaned_data.get('username')
         username = original_username.lower()
@@ -50,6 +54,7 @@ class CustomUserRegistrationForm(UserCreationForm):
             )
         return original_username
 
+    # Check if passwords match
     def clean_password2(self):
         password1 = self.cleaned_data.get('password1')
         password2 = self.cleaned_data.get('password2')
@@ -59,6 +64,7 @@ class CustomUserRegistrationForm(UserCreationForm):
                 )
         return password2
 
+    # Update form fields
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         self.fields['username'].widget.attrs.update({'class': 'form-control'})

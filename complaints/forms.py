@@ -13,6 +13,7 @@ class CommentComplaintForm(forms.ModelForm):
                 )
         }
 
+    # Check if the reason is empty, too long or too short
     def clean_reason(self):
         reason = self.cleaned_data['reason']
         if not reason:

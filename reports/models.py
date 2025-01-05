@@ -14,6 +14,7 @@ class Comment(models.Model):
         return f"{self.animal.name}: {self.content}"
 
 
+# Register the Comment model
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
     list_display = ('user', 'animal', 'content', 'created_at')

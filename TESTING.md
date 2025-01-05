@@ -209,7 +209,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Leaving the description field empty | The form should work and display *None provided* in the animal details page | Pass |
 | Trying to enter an age below 0 or over 100 | A message should appear that says that the value needs to be between 0 and 100 | Pass |
 | Leaving the image field empty | A message should appear that the field is required | Pass |
-| Trying to name the animal after one that is already registered | A message should appear that the animal is already registered | Pass |
+| Trying to name the animal after one that is already registered with the user's account | A message should appear that the animal is already registered for that user | Pass |
 | Trying a different style of writing the same name | A message should appear that the animal is already registered | Pass |
 | Trying to enter a value for the name field with more than 20 characters | A message should appear that the entry is too long | Pass |
 | Trying to enter a value for the description field with more than 255 characters | A message should appear that the entry is too long | Pass |
@@ -226,7 +226,7 @@ In this document, you will find all manual testing procedures that were used whe
 | Leaving the name field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Leaving the age field empty | A message should appear that the field is required | Pass |
 | Leaving the age field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
-| Entering a negative number or one above 100 with changed min and max values in devtools | A message should appear that warns the user that the value needs to be between 0 and 100 | Pass |
+| Entering a negative number or one above 100 in the age field with changed min and max values in devtools | A message should appear that warns the user that the value needs to be between 0 and 100 | Pass |
 | Leaving the location field empty | A message should appear that the field is required | Pass |
 | Leaving the location field empty and deleting the *required* tag in devtools | A message should appear that the field is required | Pass |
 | Leaving the description field empty | The form should work and display *None provided* in the animal details page | Pass |

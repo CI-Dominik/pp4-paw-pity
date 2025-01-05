@@ -61,6 +61,7 @@ def edit_animal(request, animal_id):
             name = form.cleaned_data.get('name').lower()
             owner = request.user
 
+            # Check if the user has already registered an animal with this name
             if Animal.objects.filter(
                 name__iexact=name.lower(), owner=owner
             ).exclude(id=animal.id).exists():

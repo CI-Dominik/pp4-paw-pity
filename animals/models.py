@@ -36,6 +36,7 @@ class Animal(models.Model):
         return self.name
 
 
+# Register the Animal model
 @admin.register(Animal)
 class AnimalAdmin(admin.ModelAdmin):
     list_display = (

@@ -14,6 +14,7 @@ class CommentComplaint(models.Model):
         return f"Complaint for comment {self.comment}: {self.reason}"
 
 
+# Register the CommentComplaint model in admin panel
 @admin.register(CommentComplaint)
 class CommentComplaintAdmin(admin.ModelAdmin):
     list_display = ('comment', 'reason', 'created_at')

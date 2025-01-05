@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.contrib import messages
 
 
+# View to complain about a comment
 def complain_comment(request, comment_id):
     comment = Comment.objects.get(id=comment_id)
     if request.method == 'POST':
@@ -26,6 +27,7 @@ def complain_comment(request, comment_id):
         )
 
 
+# View to view all complaints
 def view_complaints(request):
     if not request.user.is_superuser:
         return render(request, '403.html', status=403)
@@ -40,6 +42,7 @@ def view_complaints(request):
         )
 
 
+# View to remove a comment
 def remove_comment(request, comment_id):
     if not request.user.is_superuser:
         return render(request, '403.html', status=403)
@@ -48,6 +51,7 @@ def remove_comment(request, comment_id):
     return redirect('view_complaints')
 
 
+# View to delete a complaint
 def delete_complaint(request, complaint_id):
     if not request.user.is_superuser:
         return render(request, '403.html', status=403)
