@@ -117,17 +117,15 @@ Link to the website's project board: [Link to the GitHub Project](https://github
 ## **USER EXPERIENCE**
 
 ## Target audience
-* Our platform is designed for all pet owners and animal lovers who care deeply about the well-being of animals. Whether you've lost a pet, found one wandering alone, or simply want to help reunite families with their beloved companions, this website is for you. Together, we can make a difference in bringing lost pets back home.
+* The target audience for this homepage are people who lost their pet or want to help others find their beloved animal companion and bring it back home. In this way, even people without animals are involved and encouraged to make the world a better place.
 
 ## User's journey
-* When users arrive at our website, they are welcomed with a clear and intuitive interface. The platform is divided into two main areas:
-
-My Pets: Here, users can add detailed profiles for their pets. This includes essential information like their name, breed, and photos, making it easier to act quickly if a pet ever goes missing.<br>
-Missing Animals: This section showcases a list of pets that have been reported missing. Users can browse through the profiles, filter based on location or type, and provide helpful hints if they’ve seen a reported pet.
-Every step of the way, the goal is to create a community that supports each other in reuniting with their beloved pets.
+* The user is immediately welcomed by a hero section that converts the urgency of the topic and the helplessness of the lost animals. There, the user can start their journey to the animals page.<br>
+To show that people are looking for their pets and are active on this site, the latest entries into the database are displayed.<br>
+A navigation bar provides all links needed to access other sites and their contents.
 
 ## Intuitive and consistent design
-* The homepage embraces a simple, welcoming design with turquoise and white as the primary colors. These hues were chosen to evoke a sense of calm, trust, and compassion. The minimalist layout ensures that users can navigate easily without distractions, focusing on the core purpose of the site: helping lost animals find their way back home.
+* The homepage uses a simple interface with welcoming colors and a relaxing background. The attention-grabbing white of the page wants to capture the user's attention and point them to the urgency of the topic. Turquoise colors are used as primary colors to deliver a calm atmosphere.
 
 ---
 
