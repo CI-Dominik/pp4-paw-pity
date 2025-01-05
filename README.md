@@ -48,6 +48,7 @@ Link to the website's project board: [Link to the GitHub Project](https://github
   * [JavaScript](#javascript)
   * [Python](#python)
   * [Django](#django)
+  * [Cloudinary](#cloudinary)
   * [Visual Studio Code](#visual-studio-code)
   * [GitHub](#github)
   * [Adobe Photoshop](#adobe-photoshop)
@@ -312,6 +313,9 @@ The CommentComplaint model was used to store data about reported comments. It li
 
 ### Django
 * Django was used as a framework to manage views, URLs, models and HTML templates.
+
+### Cloudinary
+* Cloudinary was used to store the image files uploaded by users and resize them to decrease the filesize.
 
 ### Visual Studio Code
 * Visual Studio Code was used to clone the GitHub repository, edit the homepage's code and commit / push the results to GitHub.
